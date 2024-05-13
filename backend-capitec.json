@@ -1,0 +1,13 @@
+{
+    "displayName": "backend-capitec",
+    "appName": "backend-capitec",
+    "description": "backend for capitec-app",
+    "lastModified": "2024-05-13T17:34:47.019Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2024-05-13T17:34:45.791Z",
+    "analyticsId": "36bec07e-be6d-bfc9-c1a2-6e994908ca1b",
+    "createdStudioVersion": "9.2.1"
+}
