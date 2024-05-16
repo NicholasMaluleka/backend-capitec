@@ -53,9 +53,34 @@
             ]
         }
     },
-    "/upload-file": {},
+    "/upload-file": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
     "/get-doc": {
         "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/add-admin": {
+        "post": {
             "summary": "",
             "description": "",
             "consumes": [],
