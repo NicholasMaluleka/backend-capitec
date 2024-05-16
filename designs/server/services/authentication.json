@@ -1809,7 +1809,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.body = bh.input.body\n\nbh.body = {\n    email: \"kimberleymnguni@gmail\",\n    password:\"1234\",\n    collection: \"admin\"\n}\n\nconsole.log(bh.body)\n\nbh.collection = bh.input.body.collection;\n\ndelete bh.input.body.collection;",
+        "script": "bh.body = bh.input.body\n\nbh.body = {\n    email: \"kimberleymnguni@gmail.com\",\n    password:\"1234\",\n    collection: \"admin\"\n}\n\nconsole.log(bh.body)\n\nbh.collection = bh.input.body.collection;\n\ndelete bh.input.body.collection;",
         "functionName": "sd_Ga8IrwSSvEOy4YZv",
         "category": "Function",
         "x": 165,

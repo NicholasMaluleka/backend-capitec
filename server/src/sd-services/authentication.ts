@@ -1269,7 +1269,7 @@ export class authentication {
       bh.body = bh.input.body;
 
       bh.body = {
-        email: 'kimberleymnguni@gmail',
+        email: 'kimberleymnguni@gmail.com',
         password: '1234',
         collection: 'admin',
       };
