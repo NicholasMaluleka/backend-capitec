@@ -13,7 +13,10 @@
             "SSD_DEFAULT_PORT": "server",
             "webAppMountpoint": "both",
             "CLOCK_TOLERANCE": "server",
-            "NGFORAGE_MOBILE_DRIVER": "client"
+            "NGFORAGE_MOBILE_DRIVER": "client",
+            "gmail_userid": "server",
+            "gmail_appPassword": "server",
+            "mongodbUrl": "server"
         }
     },
     "dev": {
@@ -30,7 +33,10 @@
             "SSD_DEFAULT_PORT": "8081",
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
-            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB"
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "gmail_userid": "lesetjamaluleka@gmail.com",
+            "gmail_appPassword": "vton snqe ufjv oqzu",
+            "mongodbUrl": "mongodb://localhost:27017/capitec"
         }
     },
     "prod": {
@@ -47,7 +53,10 @@
             "SSD_DEFAULT_PORT": "8081",
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
-            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB"
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "gmail_userid": "lesetjamaluleka@gmail.com",
+            "gmail_appPassword": "vton snqe ufjv oqzu",
+            "mongodbUrl": "mongodb://localhost:27017/capitec"
         }
     }
 }

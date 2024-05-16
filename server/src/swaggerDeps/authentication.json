@@ -1,0 +1,70 @@
+{
+    "/update": {
+        "put": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/log-in": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/get-customers": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/registration": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "multipart/form-data"
+            ],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/upload-file": {},
+    "/get-doc": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    }
+}
