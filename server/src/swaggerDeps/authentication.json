@@ -53,19 +53,6 @@
             ]
         }
     },
-    "/upload-file": {
-        "post": {
-            "summary": "",
-            "description": "",
-            "consumes": [],
-            "produces": [],
-            "parameters": [],
-            "responses": {},
-            "tags": [
-                "authentication"
-            ]
-        }
-    },
     "/get-doc": {
         "get": {
             "summary": "",
@@ -80,6 +67,45 @@
         }
     },
     "/add-admin": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/download": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/upload-file": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/admin-log-in": {
         "post": {
             "summary": "",
             "description": "",
