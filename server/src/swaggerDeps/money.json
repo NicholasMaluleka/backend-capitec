@@ -1,0 +1,41 @@
+{
+    "/buy-airtime": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "money"
+            ]
+        }
+    },
+    "/buy-electricity": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "money"
+            ]
+        }
+    },
+    "/send-money": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "money"
+            ]
+        }
+    }
+}
