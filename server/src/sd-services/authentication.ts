@@ -1151,7 +1151,7 @@ export class authentication {
 
       console.log('body ==>', bh.result);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_DqrU3UoLykR5cDTa(bh, parentSpanInst);
+      bh = await this.sd_FyqgIf0A0W3zujIX(bh, parentSpanInst);
       //appendnew_next_sd_1PgsBoBZHTxIgHrz
       return bh;
     } catch (e) {
@@ -1161,6 +1161,44 @@ export class authentication {
         'sd_1PgsBoBZHTxIgHrz',
         spanInst,
         'sd_1PgsBoBZHTxIgHrz'
+      );
+    }
+  }
+
+  async sd_FyqgIf0A0W3zujIX(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_FyqgIf0A0W3zujIX',
+      parentSpanInst
+    );
+    try {
+      bh.payload = {
+        to: bh.input.body.email,
+        subject: 'REGISTRATION SUCCESSFUL',
+        from: 'Capitec',
+        body: `Your application to bank with Capitec has been sent.
+    <br>
+    <br>
+<br>
+<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/>`,
+      };
+
+      bh.input.body['accountNumber'] = bh.accountNo;
+
+      console.log(bh.payload);
+
+      bh.status = 200;
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_DqrU3UoLykR5cDTa(bh, parentSpanInst);
+      //appendnew_next_sd_FyqgIf0A0W3zujIX
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_FyqgIf0A0W3zujIX',
+        spanInst,
+        'sd_FyqgIf0A0W3zujIX'
       );
     }
   }
@@ -1179,7 +1217,7 @@ export class authentication {
         bh.option
       );
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_UdrE8xgD6V1ouecQ(bh, parentSpanInst);
+      bh = await this.sd_3bnQv8eSzR6JZwQw(bh, parentSpanInst);
       //appendnew_next_sd_DqrU3UoLykR5cDTa
       return bh;
     } catch (e) {
@@ -1193,9 +1231,9 @@ export class authentication {
     }
   }
 
-  async sd_UdrE8xgD6V1ouecQ(bh, parentSpanInst) {
+  async sd_3bnQv8eSzR6JZwQw(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_UdrE8xgD6V1ouecQ',
+      'sd_3bnQv8eSzR6JZwQw',
       parentSpanInst
     );
     try {
@@ -1221,31 +1259,31 @@ export class authentication {
           userid,
           password,
           to: bh.input.body.email,
-          subject: 'Account registration',
-          body: undefined,
+          subject: bh.payload.subject,
+          body: bh.payload.body,
           cc: undefined,
           bcc: undefined,
-          from: 'Capitec',
-          html: 'Your application to open an account with Capitec has been sent . ',
+          from: bh.payload.from,
+          html: undefined,
           iCal: undefined,
           routingOptions: undefined,
           contentOptions: undefined,
           securityOptions: undefined,
           headerOptions: undefined,
-          attachments: [],
+          attachments: undefined,
         }
       );
       this.tracerService.sendData(spanInst, bh);
       await this.sd_OCnBbcvqOLZSMTj9(bh, parentSpanInst);
-      //appendnew_next_sd_UdrE8xgD6V1ouecQ
+      //appendnew_next_sd_3bnQv8eSzR6JZwQw
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_UdrE8xgD6V1ouecQ',
+        'sd_3bnQv8eSzR6JZwQw',
         spanInst,
-        'sd_UdrE8xgD6V1ouecQ'
+        'sd_3bnQv8eSzR6JZwQw'
       );
     }
   }
@@ -1942,7 +1980,7 @@ export class authentication {
     try {
       bh.payload = {
         to: bh.input.body.email,
-        subject: 'REGISTRATION SUCCESSFUL',
+        subject: 'APPLICATION SUCCESSFUL',
         from: 'Capitec',
         body: `Your application to bank with Capitec has been approved.
     <br>
@@ -2031,17 +2069,17 @@ Your account number is ${bh.accountNo}
           password,
           to: bh.input.body.email,
           subject: bh.payload.subject,
-          body: undefined,
+          body: bh.payload.body,
           cc: undefined,
           bcc: undefined,
           from: bh.payload.from,
-          html: bh.payload.body,
+          html: undefined,
           iCal: undefined,
           routingOptions: undefined,
           contentOptions: undefined,
           securityOptions: undefined,
           headerOptions: undefined,
-          attachments: [],
+          attachments: undefined,
         }
       );
       this.tracerService.sendData(spanInst, bh);
@@ -2140,7 +2178,7 @@ Your account number is ${bh.accountNo}
           contentOptions: undefined,
           securityOptions: undefined,
           headerOptions: undefined,
-          attachments: [],
+          attachments: undefined,
         }
       );
       this.tracerService.sendData(spanInst, bh);

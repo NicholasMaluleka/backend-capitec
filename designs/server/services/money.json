@@ -762,7 +762,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.send = {\n    'collection': 'loans'\n}\n\nbh.input.body['_id'] = new Date().getTime()\n\n\n",
+        "script": "bh.send = {\n    'collection': 'loans'\n}\n\nbh.input.body['_id'] = new Date().getTime()\nbh.input.body['status'] = \"pending\"\n\n\n",
         "functionName": "sd_a3GLXtWfgmhnkp6C",
         "category": "Function",
         "x": 185,

@@ -597,6 +597,7 @@ export class money {
       };
 
       bh.input.body['_id'] = new Date().getTime();
+      bh.input.body['status'] = 'pending';
 
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_ihonYKFe0Arb8V2X(bh, parentSpanInst);
