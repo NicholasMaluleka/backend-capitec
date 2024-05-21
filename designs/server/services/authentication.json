@@ -2588,7 +2588,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "filter",
-        "script": "       bh.search = {\n    query: { 'email': bh.input.body.email },\n    collection: 'users',\n}\n\nbh.input.body['_id'] = new Date().getTime();\nbh.input.body['status'] = \"pending\";\nbh.input.body['available balance'] = 50\nbh.input.body['cash-withdrawal-limit'] = 5000\nbh.input.body['card-purchases-limit'] = 50000\nbh.input.body['online/scan-to-pay/phone'] = 50000\nbh.input.body['date'] = ''\n\nconsole.log(bh.input.body)",
+        "script": "       bh.search = {\n    query: { 'email': bh.input.body.email },\n    collection: 'users',\n}\n\nbh.input.body['_id'] = new Date().getTime();\nbh.input.body['status'] = \"pending\";\nbh.input.body['available balance'] = 50\nbh.input.body['cash-withdrawal-limit'] = 5000\nbh.input.body['card-purchases-limit'] = 50000\nbh.input.body['online/scan-to-pay/phone'] = 50000\nbh.input.body['date'] = 'N/A'\n\nconsole.log(bh.input.body)",
         "functionName": "filter",
         "category": "Function",
         "x": 145,
@@ -3615,7 +3615,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\nconsole.log(bh.file)\nbh.file = bh.input.files.proof_of_residence[0]\n\nbh.file['email'] = bh.emails\nbh.doc = {\n    collection : \"Proof_of_residence\"\n    }\n\nconsole.log(\"LOOK HERE ==>\", bh.emails)\n\n\n",
+        "script": "bh.file = bh.input.files.proof_of_residence[0]\n\nbh.file['email'] = bh.emails\nbh.doc = {\n    collection : \"Proof_of_residence\"\n    }\n\nconsole.log(\"LOOK HERE ==>\", bh.emails)\n\n\n",
         "functionName": "sd_2pnSdVCyfl7FNdGx",
         "category": "Function",
         "x": 145,
@@ -3813,7 +3813,7 @@
         "generated": true
     },
     {
-        "id": "sd_feXzby1rAgAfez0Z",
+        "id": "sd_5SewGgYttHnr3W8A",
         "type": "HttpIn",
         "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
         "viewType": "server",
@@ -3835,7 +3835,7 @@
             "type": "path",
             "fileOptions": [
                 {
-                    "name": "picture",
+                    "name": "pictures",
                     "maxCount": 1
                 }
             ],
@@ -3849,7 +3849,7 @@
         "editableListData": {
             "fileoptions": [
                 {
-                    "key": "picture",
+                    "key": "pictures",
                     "value": "1",
                     "rowId": "sd_FfCdCnPWJgMlGTrN",
                     "valid": true
@@ -3864,11 +3864,11 @@
         "outputs": 1,
         "validateRequestUsingSwaggerDocs": false,
         "category": "HTTP",
-        "x": 45,
-        "y": 2440,
+        "x": 65,
+        "y": 2460,
         "wires": [
             [
-                "sd_VRioT8TWbrKp1MuN"
+                "sd_uokvLXcME4b47mIE"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -3883,23 +3883,23 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "authentication",
-        "functionName": "sd_feXzby1rAgAfez0Z"
+        "functionName": "sd_5SewGgYttHnr3W8A"
     },
     {
-        "id": "sd_VRioT8TWbrKp1MuN",
+        "id": "sd_uokvLXcME4b47mIE",
         "type": "Script",
         "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\nconsole.log(bh.file)\nbh.file = bh.input.files.picture[0]\n\nbh.file['email'] = bh.emails\nbh.doc = {\n    collection : \"picture\"\n    }\n\nconsole.log(\"LOOK HERE ==>\", bh.emails)\n\n\n",
-        "functionName": "sd_VRioT8TWbrKp1MuN",
+        "script": "bh.file = bh.input.files.pictures[0]\n\nbh.file['email'] = bh.emails\nbh.doc = {\n    collection : \"pictures\"\n    }\n\nconsole.log(\"LOOK HERE ==>\", bh.emails)\n\n\n",
+        "functionName": "sd_uokvLXcME4b47mIE",
         "category": "Function",
-        "x": 145,
-        "y": 2440,
+        "x": 165,
+        "y": 2460,
         "wires": [
             [
-                "sd_LFZDpUpGTx5jyRLN"
+                "sd_Gq43Mp6tQu3JLi70"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -3908,7 +3908,7 @@
         "generated": true
     },
     {
-        "id": "sd_LFZDpUpGTx5jyRLN",
+        "id": "sd_Gq43Mp6tQu3JLi70",
         "type": "FileIn",
         "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
         "viewType": "server",
@@ -3924,13 +3924,13 @@
             "type": "bh",
             "value": "result"
         },
-        "functionName": "sd_LFZDpUpGTx5jyRLN",
+        "functionName": "sd_Gq43Mp6tQu3JLi70",
         "category": "File Operation",
-        "x": 245,
-        "y": 2440,
+        "x": 265,
+        "y": 2460,
         "wires": [
             [
-                "sd_WdT1gXea2HHMjNv0"
+                "sd_yK0YzpyAgug60cmD"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -3939,7 +3939,7 @@
         "generated": true
     },
     {
-        "id": "sd_HqBgc2Yf4IMQxa4S",
+        "id": "sd_HUYr3nZYciEi4OsC",
         "type": "HttpOut",
         "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
         "viewType": "server",
@@ -3980,10 +3980,10 @@
             "headers": "Map",
             "cookies": "Map"
         },
-        "functionName": "sd_HqBgc2Yf4IMQxa4S",
+        "functionName": "sd_HUYr3nZYciEi4OsC",
         "category": "HTTP",
-        "x": 545,
-        "y": 2440,
+        "x": 565,
+        "y": 2460,
         "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -3991,7 +3991,7 @@
         "generated": true
     },
     {
-        "id": "sd_emZ7JTvS0XYyTJ59",
+        "id": "sd_vfqnU1o3r5i7icy0",
         "type": "Mongodb",
         "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
         "viewType": "server",
@@ -4026,13 +4026,13 @@
         "filePath": "",
         "fileName": "",
         "pipeline": "",
-        "functionName": "sd_emZ7JTvS0XYyTJ59",
+        "functionName": "sd_vfqnU1o3r5i7icy0",
         "category": "Storage",
-        "x": 445,
-        "y": 2440,
+        "x": 465,
+        "y": 2460,
         "wires": [
             [
-                "sd_HqBgc2Yf4IMQxa4S"
+                "sd_HUYr3nZYciEi4OsC"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -4068,20 +4068,20 @@
         "generated": true
     },
     {
-        "id": "sd_WdT1gXea2HHMjNv0",
+        "id": "sd_yK0YzpyAgug60cmD",
         "type": "Script",
         "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
         "script": "bh.dataString = bh.result.toString()\nbh.result = bh.dataString\n\n\nconsole.log(\"result\", bh.result)",
-        "functionName": "sd_WdT1gXea2HHMjNv0",
+        "functionName": "sd_yK0YzpyAgug60cmD",
         "category": "Function",
-        "x": 325,
-        "y": 2440,
+        "x": 345,
+        "y": 2460,
         "wires": [
             [
-                "sd_emZ7JTvS0XYyTJ59"
+                "sd_vfqnU1o3r5i7icy0"
             ]
         ],
         "__n_excludedFromValidation__": {},

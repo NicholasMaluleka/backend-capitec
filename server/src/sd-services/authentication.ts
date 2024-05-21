@@ -467,7 +467,7 @@ export class authentication {
       this.sdService.multipartParser({
         type: 'path',
         path: 'file'.replace(/\\|\//g, sep),
-        options: [{ name: 'picture', maxCount: 1 }],
+        options: [{ name: 'pictures', maxCount: 1 }],
       }),
 
       async (req, res, next) => {
@@ -480,10 +480,10 @@ export class authentication {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_VRioT8TWbrKp1MuN(bh, parentSpanInst);
-          //appendnew_next_sd_feXzby1rAgAfez0Z
+          bh = await this.sd_uokvLXcME4b47mIE(bh, parentSpanInst);
+          //appendnew_next_sd_5SewGgYttHnr3W8A
         } catch (e) {
-          return await this.errorHandler(bh, e, 'sd_feXzby1rAgAfez0Z');
+          return await this.errorHandler(bh, e, 'sd_5SewGgYttHnr3W8A');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
@@ -1004,7 +1004,7 @@ export class authentication {
       bh.input.body['cash-withdrawal-limit'] = 5000;
       bh.input.body['card-purchases-limit'] = 50000;
       bh.input.body['online/scan-to-pay/phone'] = 50000;
-      bh.input.body['date'] = '';
+      bh.input.body['date'] = 'N/A';
 
       console.log(bh.input.body);
       this.tracerService.sendData(spanInst, bh);
@@ -2257,7 +2257,6 @@ Your account number is ${bh.accountNo}
       parentSpanInst
     );
     try {
-      console.log(bh.file);
       bh.file = bh.input.files.proof_of_residence[0];
 
       bh.file['email'] = bh.emails;
@@ -2379,40 +2378,39 @@ Your account number is ${bh.accountNo}
     }
   }
 
-  async sd_VRioT8TWbrKp1MuN(bh, parentSpanInst) {
+  async sd_uokvLXcME4b47mIE(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_VRioT8TWbrKp1MuN',
+      'sd_uokvLXcME4b47mIE',
       parentSpanInst
     );
     try {
-      console.log(bh.file);
-      bh.file = bh.input.files.picture[0];
+      bh.file = bh.input.files.pictures[0];
 
       bh.file['email'] = bh.emails;
       bh.doc = {
-        collection: 'picture',
+        collection: 'pictures',
       };
 
       console.log('LOOK HERE ==>', bh.emails);
 
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_LFZDpUpGTx5jyRLN(bh, parentSpanInst);
-      //appendnew_next_sd_VRioT8TWbrKp1MuN
+      bh = await this.sd_Gq43Mp6tQu3JLi70(bh, parentSpanInst);
+      //appendnew_next_sd_uokvLXcME4b47mIE
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_VRioT8TWbrKp1MuN',
+        'sd_uokvLXcME4b47mIE',
         spanInst,
-        'sd_VRioT8TWbrKp1MuN'
+        'sd_uokvLXcME4b47mIE'
       );
     }
   }
 
-  async sd_LFZDpUpGTx5jyRLN(bh, parentSpanInst) {
+  async sd_Gq43Mp6tQu3JLi70(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_LFZDpUpGTx5jyRLN',
+      'sd_Gq43Mp6tQu3JLi70',
       parentSpanInst
     );
     try {
@@ -2423,23 +2421,23 @@ Your account number is ${bh.accountNo}
         encoding: 'none',
       });
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_WdT1gXea2HHMjNv0(bh, parentSpanInst);
-      //appendnew_next_sd_LFZDpUpGTx5jyRLN
+      bh = await this.sd_yK0YzpyAgug60cmD(bh, parentSpanInst);
+      //appendnew_next_sd_Gq43Mp6tQu3JLi70
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_LFZDpUpGTx5jyRLN',
+        'sd_Gq43Mp6tQu3JLi70',
         spanInst,
-        'sd_LFZDpUpGTx5jyRLN'
+        'sd_Gq43Mp6tQu3JLi70'
       );
     }
   }
 
-  async sd_WdT1gXea2HHMjNv0(bh, parentSpanInst) {
+  async sd_yK0YzpyAgug60cmD(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_WdT1gXea2HHMjNv0',
+      'sd_yK0YzpyAgug60cmD',
       parentSpanInst
     );
     try {
@@ -2448,23 +2446,23 @@ Your account number is ${bh.accountNo}
 
       console.log('result', bh.result);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_emZ7JTvS0XYyTJ59(bh, parentSpanInst);
-      //appendnew_next_sd_WdT1gXea2HHMjNv0
+      bh = await this.sd_vfqnU1o3r5i7icy0(bh, parentSpanInst);
+      //appendnew_next_sd_yK0YzpyAgug60cmD
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_WdT1gXea2HHMjNv0',
+        'sd_yK0YzpyAgug60cmD',
         spanInst,
-        'sd_WdT1gXea2HHMjNv0'
+        'sd_yK0YzpyAgug60cmD'
       );
     }
   }
 
-  async sd_emZ7JTvS0XYyTJ59(bh, parentSpanInst) {
+  async sd_vfqnU1o3r5i7icy0(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_emZ7JTvS0XYyTJ59',
+      'sd_vfqnU1o3r5i7icy0',
       parentSpanInst
     );
     try {
@@ -2476,21 +2474,21 @@ Your account number is ${bh.accountNo}
         bh.buffer
       );
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_HqBgc2Yf4IMQxa4S(bh, parentSpanInst);
-      //appendnew_next_sd_emZ7JTvS0XYyTJ59
+      await this.sd_HUYr3nZYciEi4OsC(bh, parentSpanInst);
+      //appendnew_next_sd_vfqnU1o3r5i7icy0
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_emZ7JTvS0XYyTJ59',
+        'sd_vfqnU1o3r5i7icy0',
         spanInst,
-        'sd_emZ7JTvS0XYyTJ59'
+        'sd_vfqnU1o3r5i7icy0'
       );
     }
   }
 
-  async sd_HqBgc2Yf4IMQxa4S(bh, parentSpanInst) {
+  async sd_HUYr3nZYciEi4OsC(bh, parentSpanInst) {
     try {
       const readable = new Readable();
       readable._read = () => {}; // _read is required but you can noop it
@@ -2503,7 +2501,7 @@ Your account number is ${bh.accountNo}
       bh.readable = readable;
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_HqBgc2Yf4IMQxa4S');
+      return await this.errorHandler(bh, e, 'sd_HUYr3nZYciEi4OsC');
     }
   }
 
