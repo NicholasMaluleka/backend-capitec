@@ -42,8 +42,8 @@
         "accept_bh": false,
         "functionName": "toCheckIfTheUserExists",
         "category": "General",
-        "x": 85,
-        "y": 60,
+        "x": 65,
+        "y": 40,
         "wires": [
             [
                 "sd_o7sY5owLdQDjMSQ7"
@@ -91,8 +91,8 @@
         "pipeline": "",
         "functionName": "mongoDb",
         "category": "Storage",
-        "x": 185,
-        "y": 60,
+        "x": 165,
+        "y": 40,
         "wires": [
             []
         ],
@@ -604,6 +604,7 @@
         "subject": "\"Account registration\"",
         "body": "undefined",
         "html": "\"Your application to open an account with Capitec has been sent . \"",
+        "attachment": [],
         "attachmentList": {},
         "switchStates": {
             "attachment": "Map"
@@ -1012,6 +1013,7 @@
             "send": "bh.result"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -1471,7 +1473,7 @@
         "outputs": 1,
         "validateRequestUsingSwaggerDocs": false,
         "category": "HTTP",
-        "x": 85,
+        "x": 45,
         "y": 1340,
         "wires": [
             [
@@ -1502,7 +1504,7 @@
         "script": "bh.search = {\n    collection: 'doc'\n}\n\n// bh.file = bh.input.files.name[0]",
         "functionName": "sd_661GptA084Ggo9sh",
         "category": "Function",
-        "x": 205,
+        "x": 145,
         "y": 1340,
         "wires": [
             [
@@ -1564,7 +1566,7 @@
         "accept_bh": false,
         "functionName": "sd_36lGut0kmUrlZgzm",
         "category": "General",
-        "x": 325,
+        "x": 245,
         "y": 1340,
         "wires": [
             [
@@ -1586,11 +1588,11 @@
         "script": "bh.status = 200;\nbh.result = bh.result;",
         "functionName": "successful",
         "category": "Function",
-        "x": 585,
+        "x": 505,
         "y": 1300,
         "wires": [
             [
-                "sd_hvL7nY3Typ2jB5GI"
+                "sd_6Q2BvqFxg3RhsZ8B"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -1621,7 +1623,7 @@
         "outputs": 2,
         "functionName": "sd_lIQWNmZ7uoQrmhEK",
         "category": "Function",
-        "x": 445,
+        "x": 385,
         "y": 1340,
         "wires": [
             [
@@ -1703,7 +1705,7 @@
         },
         "functionName": "sd_hvL7nY3Typ2jB5GI",
         "category": "HTTP",
-        "x": 680,
+        "x": 705,
         "y": 1340,
         "wires": [],
         "__n_excludedFromValidation__": {},
@@ -1730,6 +1732,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -1745,8 +1748,8 @@
         "outputs": 1,
         "validateRequestUsingSwaggerDocs": false,
         "category": "HTTP",
-        "x": 60,
-        "y": 1560,
+        "x": 45,
+        "y": 1540,
         "wires": [
             [
                 "sd_Ga8IrwSSvEOy4YZv"
@@ -1776,8 +1779,8 @@
         "script": "bh.body = bh.input.body\n\nbh.body = {\n    email: \"kimberleymnguni@gmail.com\",\n    password:\"1234\",\n    collection: \"admin\"\n}\n\nconsole.log(bh.body)\n\nbh.collection = bh.input.body.collection;\n\ndelete bh.input.body.collection;",
         "functionName": "sd_Ga8IrwSSvEOy4YZv",
         "category": "Function",
-        "x": 165,
-        "y": 1560,
+        "x": 150,
+        "y": 1540,
         "wires": [
             [
                 "sd_tGwwFfC8rIMMSpXb"
@@ -1826,8 +1829,8 @@
         "pipeline": "",
         "functionName": "sd_tGwwFfC8rIMMSpXb",
         "category": "Storage",
-        "x": 265,
-        "y": 1560,
+        "x": 250,
+        "y": 1540,
         "wires": [
             [
                 "sd_WSbR9ZOsy4Zb7OTg"
@@ -1910,8 +1913,8 @@
         },
         "functionName": "sd_WSbR9ZOsy4Zb7OTg",
         "category": "HTTP",
-        "x": 365,
-        "y": 1560,
+        "x": 350,
+        "y": 1540,
         "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -1924,8 +1927,8 @@
         "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
         "viewType": "server",
         "nodeType": "start",
-        "name": "upload file",
-        "path": "/upload-file",
+        "name": "upload ID",
+        "path": "/upload-ID",
         "uploadpath": "\"file\"",
         "summary": "",
         "description": "",
@@ -1941,7 +1944,7 @@
             "type": "path",
             "fileOptions": [
                 {
-                    "name": "name",
+                    "name": "ID",
                     "maxCount": 1
                 }
             ],
@@ -1955,9 +1958,9 @@
         "editableListData": {
             "fileoptions": [
                 {
-                    "key": "name",
+                    "key": "ID",
                     "value": "1",
-                    "rowId": "sd_6SKEwH66ULIpJ2oe",
+                    "rowId": "sd_FfCdCnPWJgMlGTrN",
                     "valid": true
                 }
             ],
@@ -1998,7 +2001,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "\n\nbh.file = bh.input.files.name[0]\n\nbh.file['email'] = bh.emails\nbh.doc = {\n    collection : \"doc\"\n    }\n\nconsole.log(\"LOOK HERE ==>\", bh.emails)\n\n\n",
+        "script": "\nconsole.log(bh.file)\nbh.file = bh.input.files.ID[0]\n\nbh.file['email'] = bh.emails\nbh.doc = {\n    collection : \"ID\"\n    }\n\nconsole.log(\"LOOK HERE ==>\", bh.emails)\n\n\n",
         "functionName": "sd_re0o7HyOwTWh41s1",
         "category": "Function",
         "x": 145,
@@ -2541,7 +2544,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.status = 404;\nbh.result = {\n    message: 'WE CAN\\'T FIND YOU!!!'\n}",
+        "script": "bh.status = 404;\nbh.result = {\n    message: 'INVALID DETAILS'\n}",
         "functionName": "sd_vT1LNiuDsUxgCaQA",
         "category": "Function",
         "x": 1705,
@@ -2585,7 +2588,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "filter",
-        "script": "       bh.search = {\n    query: { 'email': bh.input.body.email },\n    collection: 'users',\n}\n\nbh.input.body['_id'] = new Date().getTime();\nbh.input.body['status'] = \"pending\";\nbh.input.body['available balance'] = 50\nbh.input.body['cash-withdrawal-limit'] = 5000\nbh.input.body['card-purchases-limit'] = 50000\nbh.input.body['online/scan-to-pay/phone'] = 50000\n\nconsole.log(bh.input.body)",
+        "script": "       bh.search = {\n    query: { 'email': bh.input.body.email },\n    collection: 'users',\n}\n\nbh.input.body['_id'] = new Date().getTime();\nbh.input.body['status'] = \"pending\";\nbh.input.body['available balance'] = 50\nbh.input.body['cash-withdrawal-limit'] = 5000\nbh.input.body['card-purchases-limit'] = 50000\nbh.input.body['online/scan-to-pay/phone'] = 50000\nbh.input.body['date'] = ''\n\nconsole.log(bh.input.body)",
         "functionName": "filter",
         "category": "Function",
         "x": 145,
@@ -2641,6 +2644,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -2808,6 +2812,7 @@
             "send": "bh.result"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -2849,6 +2854,7 @@
         "subject": "bh.payload.subject",
         "body": "undefined",
         "html": "bh.payload.body",
+        "attachment": [],
         "attachmentList": {},
         "switchStates": {
             "attachment": "Map"
@@ -3104,6 +3110,7 @@
         "subject": "bh.payload.subject",
         "body": "undefined",
         "html": "bh.payload.body",
+        "attachment": [],
         "attachmentList": {},
         "switchStates": {
             "attachment": "Map"
@@ -3242,6 +3249,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -3257,7 +3265,7 @@
         "outputs": 1,
         "validateRequestUsingSwaggerDocs": false,
         "category": "HTTP",
-        "x": 80,
+        "x": 45,
         "y": 2140,
         "wires": [
             [
@@ -3288,7 +3296,7 @@
         "script": "    bh.search = {\n    query: { 'email': bh.input.body.email },\n    collection: 'users',\n}\n\nbh.filter = { 'email': bh.input.body['email']};\n",
         "functionName": "sd_mhe6dRuGGK3uEJCF",
         "category": "Function",
-        "x": 185,
+        "x": 150,
         "y": 2140,
         "wires": [
             [
@@ -3350,7 +3358,7 @@
         "accept_bh": false,
         "functionName": "sd_OLUA6D209KtJiSlc",
         "category": "General",
-        "x": 285,
+        "x": 250,
         "y": 2140,
         "wires": [
             [
@@ -3400,7 +3408,7 @@
         "pipeline": "",
         "functionName": "sd_sa4x6ewisc0U4fqq",
         "category": "Storage",
-        "x": 400,
+        "x": 365,
         "y": 2140,
         "wires": [
             [
@@ -3465,6 +3473,7 @@
             "send": "bh.result"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -3483,9 +3492,598 @@
         },
         "functionName": "sd_YBIuyekp2L72ixYI",
         "category": "HTTP",
-        "x": 500,
+        "x": 465,
         "y": 2140,
         "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_6Q2BvqFxg3RhsZ8B",
+        "type": "FileOut",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "encoding": "utf8",
+        "outputs": 1,
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": false,
+        "isStreaming": false,
+        "filepath": {
+            "type": "bh",
+            "value": "file.path"
+        },
+        "resultMapping": {
+            "type": "bh",
+            "value": "result"
+        },
+        "functionName": "sd_6Q2BvqFxg3RhsZ8B",
+        "category": "File Operation",
+        "x": 605,
+        "y": 1300,
+        "wires": [
+            [
+                "sd_hvL7nY3Typ2jB5GI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_GTrmxnfmYdF2FMf4",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "upload residence",
+        "path": "/upload-proof",
+        "uploadpath": "\"file\"",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": true,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": {
+            "type": "path",
+            "fileOptions": [
+                {
+                    "name": "proof_of_residence",
+                    "maxCount": 1
+                }
+            ],
+            "path": "\"file\""
+        },
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "fileoptions": [
+                {
+                    "key": "proof_of_residence",
+                    "value": "1",
+                    "rowId": "sd_FfCdCnPWJgMlGTrN",
+                    "valid": true
+                }
+            ],
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 45,
+        "y": 2320,
+        "wires": [
+            [
+                "sd_2pnSdVCyfl7FNdGx"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "file",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "authentication",
+        "functionName": "sd_GTrmxnfmYdF2FMf4"
+    },
+    {
+        "id": "sd_2pnSdVCyfl7FNdGx",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nconsole.log(bh.file)\nbh.file = bh.input.files.proof_of_residence[0]\n\nbh.file['email'] = bh.emails\nbh.doc = {\n    collection : \"Proof_of_residence\"\n    }\n\nconsole.log(\"LOOK HERE ==>\", bh.emails)\n\n\n",
+        "functionName": "sd_2pnSdVCyfl7FNdGx",
+        "category": "Function",
+        "x": 145,
+        "y": 2320,
+        "wires": [
+            [
+                "sd_TPSoLDHqp4ctSrqo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_TPSoLDHqp4ctSrqo",
+        "type": "FileIn",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "encoding": "utf8",
+        "outputs": 1,
+        "format": "buffer",
+        "filepath": {
+            "type": "bh",
+            "value": "file.path"
+        },
+        "resultMapping": {
+            "type": "bh",
+            "value": "result"
+        },
+        "functionName": "sd_TPSoLDHqp4ctSrqo",
+        "category": "File Operation",
+        "x": 245,
+        "y": 2320,
+        "wires": [
+            [
+                "sd_C8IZoIinakp9r0kb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_nOb4lYosXVYPRmpt",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "file",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "bin",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "bin": "bh.file"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_nOb4lYosXVYPRmpt",
+        "category": "HTTP",
+        "x": 545,
+        "y": 2320,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_CDxctjftAsrDISTV",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_Kkkscf5YGu1U4UWP",
+        "collection": "bh.doc.collection",
+        "options": "bh.buffer",
+        "resultMapping": "bh.result",
+        "operation": "insertOne",
+        "argumentArray": [
+            "document",
+            "options"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh.file",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_CDxctjftAsrDISTV",
+        "category": "Storage",
+        "x": 445,
+        "y": 2320,
+        "wires": [
+            [
+                "sd_nOb4lYosXVYPRmpt"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh",
+                "value": "doc.collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "buffer",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "document": {
+                "type": "bh",
+                "value": "file",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_C8IZoIinakp9r0kb",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.dataString = bh.result.toString()\nbh.result = bh.dataString\n\n\nconsole.log(\"result\", bh.result)",
+        "functionName": "sd_C8IZoIinakp9r0kb",
+        "category": "Function",
+        "x": 325,
+        "y": 2320,
+        "wires": [
+            [
+                "sd_CDxctjftAsrDISTV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_feXzby1rAgAfez0Z",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "upload picture",
+        "path": "/upload-picture",
+        "uploadpath": "\"file\"",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": true,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": {
+            "type": "path",
+            "fileOptions": [
+                {
+                    "name": "picture",
+                    "maxCount": 1
+                }
+            ],
+            "path": "\"file\""
+        },
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "fileoptions": [
+                {
+                    "key": "picture",
+                    "value": "1",
+                    "rowId": "sd_FfCdCnPWJgMlGTrN",
+                    "valid": true
+                }
+            ],
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 45,
+        "y": 2440,
+        "wires": [
+            [
+                "sd_VRioT8TWbrKp1MuN"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "file",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "authentication",
+        "functionName": "sd_feXzby1rAgAfez0Z"
+    },
+    {
+        "id": "sd_VRioT8TWbrKp1MuN",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nconsole.log(bh.file)\nbh.file = bh.input.files.picture[0]\n\nbh.file['email'] = bh.emails\nbh.doc = {\n    collection : \"picture\"\n    }\n\nconsole.log(\"LOOK HERE ==>\", bh.emails)\n\n\n",
+        "functionName": "sd_VRioT8TWbrKp1MuN",
+        "category": "Function",
+        "x": 145,
+        "y": 2440,
+        "wires": [
+            [
+                "sd_LFZDpUpGTx5jyRLN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_LFZDpUpGTx5jyRLN",
+        "type": "FileIn",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "format": "buffer",
+        "filepath": {
+            "type": "bh",
+            "value": "file.path"
+        },
+        "resultMapping": {
+            "type": "bh",
+            "value": "result"
+        },
+        "functionName": "sd_LFZDpUpGTx5jyRLN",
+        "category": "File Operation",
+        "x": 245,
+        "y": 2440,
+        "wires": [
+            [
+                "sd_WdT1gXea2HHMjNv0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_HqBgc2Yf4IMQxa4S",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "file",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "bin",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "bin": "bh.file"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_HqBgc2Yf4IMQxa4S",
+        "category": "HTTP",
+        "x": 545,
+        "y": 2440,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_emZ7JTvS0XYyTJ59",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_Kkkscf5YGu1U4UWP",
+        "collection": "bh.doc.collection",
+        "options": "bh.buffer",
+        "resultMapping": "bh.result",
+        "operation": "insertOne",
+        "argumentArray": [
+            "document",
+            "options"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh.file",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_emZ7JTvS0XYyTJ59",
+        "category": "Storage",
+        "x": 445,
+        "y": 2440,
+        "wires": [
+            [
+                "sd_HqBgc2Yf4IMQxa4S"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh",
+                "value": "doc.collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "buffer",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "document": {
+                "type": "bh",
+                "value": "file",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_WdT1gXea2HHMjNv0",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.dataString = bh.result.toString()\nbh.result = bh.dataString\n\n\nconsole.log(\"result\", bh.result)",
+        "functionName": "sd_WdT1gXea2HHMjNv0",
+        "category": "Function",
+        "x": 325,
+        "y": 2440,
+        "wires": [
+            [
+                "sd_emZ7JTvS0XYyTJ59"
+            ]
+        ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "authentication",
