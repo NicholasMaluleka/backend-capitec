@@ -1957,7 +1957,7 @@ export class authentication {
       } else if (
         this.sdService.operators['eq'](
           bh.input.body.status,
-          'declined',
+          'rejected',
           undefined,
           undefined
         )

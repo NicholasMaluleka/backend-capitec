@@ -2911,9 +2911,9 @@
             },
             {
                 "t": "eq",
-                "v": "declined",
+                "v": "rejected",
                 "vt": "str",
-                "gv": "\"declined\""
+                "gv": "\"rejected\""
             }
         ],
         "checkall": "false",
