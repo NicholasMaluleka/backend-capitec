@@ -1004,7 +1004,13 @@ export class authentication {
       bh.input.body['cash-withdrawal-limit'] = 5000;
       bh.input.body['card-purchases-limit'] = 50000;
       bh.input.body['online/scan-to-pay/phone'] = 50000;
+
+      bh.input.body['cash-withdrawal-limit-temp'] = 5000;
+      bh.input.body['card-purchases-limit-temp'] = 50000;
+      bh.input.body['online/scan-to-pay/phone-temp'] = 50000;
+
       bh.input.body['date'] = 'N/A';
+      bh.input.body['registered'] = 'true';
 
       console.log(bh.input.body);
       this.tracerService.sendData(spanInst, bh);
@@ -1270,7 +1276,7 @@ export class authentication {
           contentOptions: undefined,
           securityOptions: undefined,
           headerOptions: undefined,
-          attachments: undefined,
+          attachments: [],
         }
       );
       this.tracerService.sendData(spanInst, bh);
@@ -2079,7 +2085,7 @@ Your account number is ${bh.accountNo}
           contentOptions: undefined,
           securityOptions: undefined,
           headerOptions: undefined,
-          attachments: undefined,
+          attachments: [],
         }
       );
       this.tracerService.sendData(spanInst, bh);
@@ -2125,7 +2131,7 @@ Your account number is ${bh.accountNo}
 
       bh.status = 200;
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_SImLNw21YIVEUAms(bh, parentSpanInst);
+      bh = await this.sd_zG9YQRzqT1mvDtoB(bh, parentSpanInst);
       //appendnew_next_sd_YUZy02IqT07gy1tn
       return bh;
     } catch (e) {
@@ -2135,6 +2141,35 @@ Your account number is ${bh.accountNo}
         'sd_YUZy02IqT07gy1tn',
         spanInst,
         'sd_YUZy02IqT07gy1tn'
+      );
+    }
+  }
+
+  async sd_zG9YQRzqT1mvDtoB(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_zG9YQRzqT1mvDtoB',
+      parentSpanInst
+    );
+    try {
+      bh.result = await MongoPersistance.getInstance().findOneAndUpdate(
+        'sd_Kkkscf5YGu1U4UWP',
+        bh.collection,
+        bh.filter,
+        bh.body,
+        bh.option,
+        bh.option
+      );
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_SImLNw21YIVEUAms(bh, parentSpanInst);
+      //appendnew_next_sd_zG9YQRzqT1mvDtoB
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_zG9YQRzqT1mvDtoB',
+        spanInst,
+        'sd_zG9YQRzqT1mvDtoB'
       );
     }
   }
@@ -2178,7 +2213,7 @@ Your account number is ${bh.accountNo}
           contentOptions: undefined,
           securityOptions: undefined,
           headerOptions: undefined,
-          attachments: undefined,
+          attachments: [],
         }
       );
       this.tracerService.sendData(spanInst, bh);
@@ -2456,7 +2491,7 @@ Your account number is ${bh.accountNo}
       bh.result = await fileInServiceInstance.fileIn({
         filepath: bh.file.path,
         format: 'buffer',
-        encoding: 'none',
+        encoding: 'utf8',
       });
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_yK0YzpyAgug60cmD(bh, parentSpanInst);

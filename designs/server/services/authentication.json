@@ -2453,7 +2453,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "filter",
-        "script": "       bh.search = {\n    query: { 'email': bh.input.body.email },\n    collection: 'users',\n}\n\nbh.input.body['_id'] = new Date().getTime();\nbh.input.body['status'] = \"pending\";\nbh.input.body['available balance'] = 50\nbh.input.body['cash-withdrawal-limit'] = 5000\nbh.input.body['card-purchases-limit'] = 50000\nbh.input.body['online/scan-to-pay/phone'] = 50000\nbh.input.body['date'] = \"N/A\"\n\nconsole.log(bh.input.body)",
+        "script": "       bh.search = {\n    query: { 'email': bh.input.body.email },\n    collection: 'users',\n}\n\nbh.input.body['_id'] = new Date().getTime();\nbh.input.body['status'] = \"pending\";\nbh.input.body['available balance'] = 50\nbh.input.body['cash-withdrawal-limit'] = 5000\nbh.input.body['card-purchases-limit'] = 50000\nbh.input.body['online/scan-to-pay/phone'] = 50000\n\nbh.input.body['cash-withdrawal-limit-temp'] = 5000\nbh.input.body['card-purchases-limit-temp'] = 50000\nbh.input.body['online/scan-to-pay/phone-temp'] = 50000\n\nbh.input.body['date'] = \"N/A\"\nbh.input.body['registered'] = \"true\"\n\nconsole.log(bh.input.body)",
         "functionName": "filter",
         "category": "Function",
         "x": 145,
@@ -2719,6 +2719,7 @@
         "subject": "bh.payload.subject",
         "body": "bh.payload.body",
         "html": "undefined",
+        "attachment": [],
         "attachmentList": {},
         "switchStates": {
             "attachment": "Map"
@@ -2951,7 +2952,7 @@
         "y": 1980,
         "wires": [
             [
-                "sd_SImLNw21YIVEUAms"
+                "sd_zG9YQRzqT1mvDtoB"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -2974,6 +2975,7 @@
         "subject": "bh.payload.subject",
         "body": "undefined",
         "html": "bh.payload.body",
+        "attachment": [],
         "attachmentList": {},
         "switchStates": {
             "attachment": "Map"
@@ -2988,7 +2990,7 @@
         "resultMapping": "bh.result",
         "functionName": "sd_SImLNw21YIVEUAms",
         "category": "Messaging",
-        "x": 525,
+        "x": 585,
         "y": 1980,
         "wires": [
             [
@@ -3550,6 +3552,7 @@
             "bin": "bh.file"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -3777,6 +3780,7 @@
         "viewType": "server",
         "nodeType": "flow",
         "name": "",
+        "encoding": "utf8",
         "outputs": 1,
         "format": "buffer",
         "filepath": {
@@ -3989,6 +3993,7 @@
         "subject": "bh.payload.subject",
         "body": "bh.payload.body",
         "html": "undefined",
+        "attachment": [],
         "attachmentList": {},
         "switchStates": {
             "attachment": "Map"
@@ -4100,6 +4105,89 @@
                 "value": "result",
                 "nullable": "true",
                 "nullableValue": "undefined",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_zG9YQRzqT1mvDtoB",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_Kkkscf5YGu1U4UWP",
+        "collection": "bh.collection",
+        "options": "bh.option",
+        "resultMapping": "bh.result",
+        "operation": "findOneAndUpdate",
+        "argumentArray": [
+            "filter",
+            "update",
+            "options"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "bh.filter",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "bh.body",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_zG9YQRzqT1mvDtoB",
+        "category": "Storage",
+        "x": 485,
+        "y": 1980,
+        "wires": [
+            [
+                "sd_SImLNw21YIVEUAms"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "option",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "filter": {
+                "type": "bh",
+                "value": "filter",
+                "constant": false
+            },
+            "update": {
+                "type": "bh",
+                "value": "body",
                 "constant": false
             }
         },
