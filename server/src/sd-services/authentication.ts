@@ -15,6 +15,7 @@ import { FileOutService } from '../utils/ndefault-file/FileOut/FileOutService'; 
 import { MongoPersistance } from '../utils/ndefault-mongodb/Mongodb/MongoPersistance'; //_splitter_
 //append_imports_end
 export class authentication {
+  public accountNumber: any;
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -208,7 +209,7 @@ export class authentication {
             next
           );
           let parentSpanInst = null;
-          bh = await this.searchUsingAnEmail(bh, parentSpanInst);
+          bh = await this.filter(bh, parentSpanInst);
           //appendnew_next_sd_wNSwJNXL5YZXw945
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_wNSwJNXL5YZXw945');
@@ -285,40 +286,8 @@ export class authentication {
       )
     );
 
-    this.app['get'](
-      `${this.serviceBasePath}/download`,
-      cookieParser(),
-      this.sdService.getMiddlesWaresBySequenceId(
-        null,
-        'pre',
-        this.generatedMiddlewares
-      ),
-
-      async (req, res, next) => {
-        let bh: any = {};
-        try {
-          bh = this.sdService.__constructDefault(
-            { local: {}, input: {} },
-            req,
-            res,
-            next
-          );
-          let parentSpanInst = null;
-          bh = await this.sd_5rWW1kuJf58kBmQR(bh, parentSpanInst);
-          //appendnew_next_sd_Kx8f0HwYEJjck6vE
-        } catch (e) {
-          return await this.errorHandler(bh, e, 'sd_Kx8f0HwYEJjck6vE');
-        }
-      },
-      this.sdService.getMiddlesWaresBySequenceId(
-        null,
-        'post',
-        this.generatedMiddlewares
-      )
-    );
-
     this.app['post'](
-      `${this.serviceBasePath}/upload-file`,
+      `${this.serviceBasePath}/upload-ID`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -328,7 +297,7 @@ export class authentication {
       this.sdService.multipartParser({
         type: 'path',
         path: 'file'.replace(/\\|\//g, sep),
-        options: [{ name: 'name', maxCount: 1 }],
+        options: [{ name: 'ID', maxCount: 1 }],
       }),
 
       async (req, res, next) => {
@@ -377,6 +346,144 @@ export class authentication {
           //appendnew_next_sd_GnRmWMJ9CKwXfT4s
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_GnRmWMJ9CKwXfT4s');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
+
+    this.app['put'](
+      `${this.serviceBasePath}/update-admin`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_J20aydaSlPCQR1LX(bh, parentSpanInst);
+          //appendnew_next_sd_7tbBQhVKDFD7qzBH
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_7tbBQhVKDFD7qzBH');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
+
+    this.app['delete'](
+      `${this.serviceBasePath}/delete`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_mhe6dRuGGK3uEJCF(bh, parentSpanInst);
+          //appendnew_next_sd_nAhUEQR5GV1o7HYM
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_nAhUEQR5GV1o7HYM');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
+
+    this.app['post'](
+      `${this.serviceBasePath}/upload-proof`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+      this.sdService.multipartParser({
+        type: 'path',
+        path: 'file'.replace(/\\|\//g, sep),
+        options: [{ name: 'proof_of_residence', maxCount: 1 }],
+      }),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_2pnSdVCyfl7FNdGx(bh, parentSpanInst);
+          //appendnew_next_sd_GTrmxnfmYdF2FMf4
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_GTrmxnfmYdF2FMf4');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
+
+    this.app['post'](
+      `${this.serviceBasePath}/upload-picture`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+      this.sdService.multipartParser({
+        type: 'path',
+        path: 'file'.replace(/\\|\//g, sep),
+        options: [{ name: 'pictures', maxCount: 1 }],
+      }),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_uokvLXcME4b47mIE(bh, parentSpanInst);
+          //appendnew_next_sd_5SewGgYttHnr3W8A
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_5SewGgYttHnr3W8A');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
@@ -733,7 +840,7 @@ export class authentication {
     try {
       bh.status = 404;
       bh.result = {
-        message: "WE CAN'T FIND YOU!!!",
+        message: 'INVALID DETAILS!!',
       };
       this.tracerService.sendData(spanInst, bh);
       await this.sd_pcyOxzVMzk1DjQYV(bh, parentSpanInst);
@@ -883,34 +990,34 @@ export class authentication {
     }
   }
 
-  async searchUsingAnEmail(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'searchUsingAnEmail',
-      parentSpanInst
-    );
+  async filter(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan('filter', parentSpanInst);
     try {
       bh.search = {
         query: { email: bh.input.body.email },
         collection: 'users',
-        status: 'pending',
       };
 
       bh.input.body['_id'] = new Date().getTime();
       bh.input.body['status'] = 'pending';
-      console.log('B ==>', bh.input.body);
-      bh.e = bh.input.body['email'];
-      console.log('LOOK HERE ==>', bh.emails);
+      bh.input.body['available balance'] = 50;
+      bh.input.body['cash-withdrawal-limit'] = 5000;
+      bh.input.body['card-purchases-limit'] = 50000;
+      bh.input.body['online/scan-to-pay/phone'] = 50000;
+      bh.input.body['date'] = 'N/A';
+
+      console.log(bh.input.body);
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_uUIUBZC8TrCWMreT(bh, parentSpanInst);
-      //appendnew_next_searchUsingAnEmail
+      //appendnew_next_filter
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_YALbo1Afuro3ZUk4',
+        'sd_oQC3wqUeMZ33B9S1',
         spanInst,
-        'searchUsingAnEmail'
+        'filter'
       );
     }
   }
@@ -958,7 +1065,7 @@ export class authentication {
       ) {
         bh = await this.ifError(bh, parentSpanInst);
       } else {
-        bh = await this.sd_XPtYFLg5cFDSF9LZ(bh, parentSpanInst);
+        bh = await this.searchUsingAnEmail(bh, parentSpanInst);
       }
       this.tracerService.sendData(spanInst, bh);
 
@@ -1006,30 +1113,92 @@ export class authentication {
     }
   }
 
-  async sd_XPtYFLg5cFDSF9LZ(bh, parentSpanInst) {
+  async searchUsingAnEmail(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_XPtYFLg5cFDSF9LZ',
+      'searchUsingAnEmail',
       parentSpanInst
     );
     try {
-      bh.status = 200;
-      bh.collection = bh.input.body.collection;
-
-      delete bh.input.body.collection;
-      bh.body = bh.input.body;
-
-      console.log('body ==>', bh.result);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_DqrU3UoLykR5cDTa(bh, parentSpanInst);
-      //appendnew_next_sd_XPtYFLg5cFDSF9LZ
+      bh = await this.sd_1PgsBoBZHTxIgHrz(bh, parentSpanInst);
+      //appendnew_next_searchUsingAnEmail
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_XPtYFLg5cFDSF9LZ',
+        'sd_PEtPIzN0a9fWLkvB',
         spanInst,
-        'sd_XPtYFLg5cFDSF9LZ'
+        'searchUsingAnEmail'
+      );
+    }
+  }
+
+  async sd_1PgsBoBZHTxIgHrz(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_1PgsBoBZHTxIgHrz',
+      parentSpanInst
+    );
+    try {
+      console.log('Last script: ', bh.hashed);
+      bh.status = 200;
+      bh.collection = bh.input.body.collection;
+
+      delete bh.input.body.collection;
+      bh.body = bh.input.body;
+      console.log(bh.body);
+      console.log(bh.input.body);
+
+      console.log('body ==>', bh.result);
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_FyqgIf0A0W3zujIX(bh, parentSpanInst);
+      //appendnew_next_sd_1PgsBoBZHTxIgHrz
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_1PgsBoBZHTxIgHrz',
+        spanInst,
+        'sd_1PgsBoBZHTxIgHrz'
+      );
+    }
+  }
+
+  async sd_FyqgIf0A0W3zujIX(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_FyqgIf0A0W3zujIX',
+      parentSpanInst
+    );
+    try {
+      bh.payload = {
+        to: bh.input.body.email,
+        subject: 'REGISTRATION SUCCESSFUL',
+        from: 'Capitec',
+        body: `Your application to bank with Capitec has been sent.
+    <br>
+    <br>
+<br>
+<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/>`,
+      };
+
+      bh.input.body['accountNumber'] = bh.accountNo;
+
+      console.log(bh.payload);
+
+      bh.status = 200;
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_DqrU3UoLykR5cDTa(bh, parentSpanInst);
+      //appendnew_next_sd_FyqgIf0A0W3zujIX
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_FyqgIf0A0W3zujIX',
+        spanInst,
+        'sd_FyqgIf0A0W3zujIX'
       );
     }
   }
@@ -1048,7 +1217,7 @@ export class authentication {
         bh.option
       );
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_UdrE8xgD6V1ouecQ(bh, parentSpanInst);
+      bh = await this.sd_3bnQv8eSzR6JZwQw(bh, parentSpanInst);
       //appendnew_next_sd_DqrU3UoLykR5cDTa
       return bh;
     } catch (e) {
@@ -1062,9 +1231,9 @@ export class authentication {
     }
   }
 
-  async sd_UdrE8xgD6V1ouecQ(bh, parentSpanInst) {
+  async sd_3bnQv8eSzR6JZwQw(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_UdrE8xgD6V1ouecQ',
+      'sd_3bnQv8eSzR6JZwQw',
       parentSpanInst
     );
     try {
@@ -1090,12 +1259,12 @@ export class authentication {
           userid,
           password,
           to: bh.input.body.email,
-          subject: 'Account registration',
-          body: undefined,
+          subject: bh.payload.subject,
+          body: bh.payload.body,
           cc: undefined,
           bcc: undefined,
-          from: 'Capitec',
-          html: 'Your application to open an account with Capitec has been sent . ',
+          from: bh.payload.from,
+          html: undefined,
           iCal: undefined,
           routingOptions: undefined,
           contentOptions: undefined,
@@ -1106,15 +1275,15 @@ export class authentication {
       );
       this.tracerService.sendData(spanInst, bh);
       await this.sd_OCnBbcvqOLZSMTj9(bh, parentSpanInst);
-      //appendnew_next_sd_UdrE8xgD6V1ouecQ
+      //appendnew_next_sd_3bnQv8eSzR6JZwQw
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_UdrE8xgD6V1ouecQ',
+        'sd_3bnQv8eSzR6JZwQw',
         spanInst,
-        'sd_UdrE8xgD6V1ouecQ'
+        'sd_3bnQv8eSzR6JZwQw'
       );
     }
   }
@@ -1213,7 +1382,7 @@ export class authentication {
       bh.status = 200;
       bh.result = bh.result;
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_hvL7nY3Typ2jB5GI(bh, parentSpanInst);
+      bh = await this.sd_6Q2BvqFxg3RhsZ8B(bh, parentSpanInst);
       //appendnew_next_successful
       return bh;
     } catch (e) {
@@ -1223,6 +1392,32 @@ export class authentication {
         'sd_LGBeMHDbzn4SoWZG',
         spanInst,
         'successful'
+      );
+    }
+  }
+
+  async sd_6Q2BvqFxg3RhsZ8B(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_6Q2BvqFxg3RhsZ8B',
+      parentSpanInst
+    );
+    try {
+      let fileOutService = FileOutService.getInstance();
+      await fileOutService.fileOut({
+        filepath: bh.file.path,
+        payload: bh.result,
+      });
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_hvL7nY3Typ2jB5GI(bh, parentSpanInst);
+      //appendnew_next_sd_6Q2BvqFxg3RhsZ8B
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_6Q2BvqFxg3RhsZ8B',
+        spanInst,
+        'sd_6Q2BvqFxg3RhsZ8B'
       );
     }
   }
@@ -1332,61 +1527,18 @@ export class authentication {
     }
   }
 
-  async sd_5rWW1kuJf58kBmQR(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_5rWW1kuJf58kBmQR',
-      parentSpanInst
-    );
-    try {
-      let fileOutService = FileOutService.getInstance();
-      await fileOutService.fileOut({
-        filepath:
-          'C:\\\\Users\\\\User\\\\Desktop\\\\capitec-app\\\\src\\\\assets\\\\uploads\\\\resume_Nicholas_Maluleka.pdf',
-        payload: bh.result,
-      });
-      this.tracerService.sendData(spanInst, bh);
-      await this.sd_Yw24UfVbF8QRUKN2(bh, parentSpanInst);
-      //appendnew_next_sd_5rWW1kuJf58kBmQR
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_5rWW1kuJf58kBmQR',
-        spanInst,
-        'sd_5rWW1kuJf58kBmQR'
-      );
-    }
-  }
-
-  async sd_Yw24UfVbF8QRUKN2(bh, parentSpanInst) {
-    try {
-      const readable = new Readable();
-      readable._read = () => {}; // _read is required but you can noop it
-      // setting buffer
-      readable.push(bh.result);
-      readable.push(null);
-      // setting status
-      bh.web.res.status(200);
-      readable.pipe(bh.web.res);
-      bh.readable = readable;
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_Yw24UfVbF8QRUKN2');
-    }
-  }
-
   async sd_re0o7HyOwTWh41s1(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
       'sd_re0o7HyOwTWh41s1',
       parentSpanInst
     );
     try {
-      bh.file = bh.input.files.name[0];
+      console.log(bh.file);
+      bh.file = bh.input.files.ID[0];
 
       bh.file['email'] = bh.emails;
       bh.doc = {
-        collection: 'doc',
+        collection: 'ID',
       };
 
       console.log('LOOK HERE ==>', bh.emails);
@@ -1713,7 +1865,7 @@ export class authentication {
     try {
       bh.status = 404;
       bh.result = {
-        message: "WE CAN'T FIND YOU!!!",
+        message: 'INVALID DETAILS',
       };
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jhfvpJLQq0j8fXSO(bh, parentSpanInst);
@@ -1727,6 +1879,667 @@ export class authentication {
         spanInst,
         'sd_vT1LNiuDsUxgCaQA'
       );
+    }
+  }
+
+  async sd_J20aydaSlPCQR1LX(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_J20aydaSlPCQR1LX',
+      parentSpanInst
+    );
+    try {
+      this.accountNumber = bh.accountNumber;
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_k1W1kSOTd6xxcwVp(bh, parentSpanInst);
+      //appendnew_next_sd_J20aydaSlPCQR1LX
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_J20aydaSlPCQR1LX',
+        spanInst,
+        'sd_J20aydaSlPCQR1LX'
+      );
+    }
+  }
+
+  async sd_k1W1kSOTd6xxcwVp(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_k1W1kSOTd6xxcwVp',
+      parentSpanInst
+    );
+    try {
+      bh.collection = 'users';
+      bh.filter = { email: bh.input.body['email'] };
+
+      delete bh.input.body.collection;
+
+      bh.body = { $set: bh.input.body };
+
+      bh.accountNo = new Date().getTime();
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_4M8rRkWGCSTdWq2m(bh, parentSpanInst);
+      //appendnew_next_sd_k1W1kSOTd6xxcwVp
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_k1W1kSOTd6xxcwVp',
+        spanInst,
+        'sd_k1W1kSOTd6xxcwVp'
+      );
+    }
+  }
+
+  async sd_4M8rRkWGCSTdWq2m(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_4M8rRkWGCSTdWq2m',
+      parentSpanInst
+    );
+    try {
+      if (
+        this.sdService.operators['eq'](
+          bh.input.body.status,
+          'approved',
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_33uhtyPmtIE2sl8p(bh, parentSpanInst);
+      } else if (
+        this.sdService.operators['eq'](
+          bh.input.body.status,
+          'declined',
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_YUZy02IqT07gy1tn(bh, parentSpanInst);
+      }
+      this.tracerService.sendData(spanInst, bh);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_4M8rRkWGCSTdWq2m',
+        spanInst,
+        'sd_4M8rRkWGCSTdWq2m'
+      );
+    }
+  }
+
+  async sd_33uhtyPmtIE2sl8p(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_33uhtyPmtIE2sl8p',
+      parentSpanInst
+    );
+    try {
+      bh.payload = {
+        to: bh.input.body.email,
+        subject: 'APPLICATION SUCCESSFUL',
+        from: 'Capitec',
+        body: `Your application to bank with Capitec has been approved.
+    <br>
+    <br>
+Your account number is ${bh.accountNo}
+<br>
+<br>
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/></center>`,
+      };
+
+      bh.input.body['accountNumber'] = bh.accountNo;
+
+      console.log(bh.payload);
+
+      bh.status = 200;
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_iEGqdVrO2IrPKZlR(bh, parentSpanInst);
+      //appendnew_next_sd_33uhtyPmtIE2sl8p
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_33uhtyPmtIE2sl8p',
+        spanInst,
+        'sd_33uhtyPmtIE2sl8p'
+      );
+    }
+  }
+
+  async sd_iEGqdVrO2IrPKZlR(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_iEGqdVrO2IrPKZlR',
+      parentSpanInst
+    );
+    try {
+      bh.result = await MongoPersistance.getInstance().findOneAndUpdate(
+        'sd_Kkkscf5YGu1U4UWP',
+        bh.collection,
+        bh.filter,
+        bh.body,
+        bh.option,
+        bh.option
+      );
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_Q6O5gIdDjkxbhMdz(bh, parentSpanInst);
+      //appendnew_next_sd_iEGqdVrO2IrPKZlR
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_iEGqdVrO2IrPKZlR',
+        spanInst,
+        'sd_iEGqdVrO2IrPKZlR'
+      );
+    }
+  }
+
+  async sd_Q6O5gIdDjkxbhMdz(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_Q6O5gIdDjkxbhMdz',
+      parentSpanInst
+    );
+    try {
+      let mailConfigObj = this.sdService.getConfigObj(
+        'emailout-config',
+        'sd_bkwqQKmMI8faGDdO'
+      );
+      let server = mailConfigObj.server;
+      let port = mailConfigObj.port;
+      let secure = mailConfigObj.secure;
+      let tls = mailConfigObj.tls;
+      let userid = mailConfigObj.userid;
+      let password = mailConfigObj.password;
+      let emailServiceInstance = EmailOutService.getInstance();
+      bh.result = await emailServiceInstance.sendEmail(
+        {
+          server,
+          port,
+          secure,
+          tls,
+        },
+        {
+          userid,
+          password,
+          to: bh.input.body.email,
+          subject: bh.payload.subject,
+          body: bh.payload.body,
+          cc: undefined,
+          bcc: undefined,
+          from: bh.payload.from,
+          html: undefined,
+          iCal: undefined,
+          routingOptions: undefined,
+          contentOptions: undefined,
+          securityOptions: undefined,
+          headerOptions: undefined,
+          attachments: [],
+        }
+      );
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_TcKHIgUtKSz6qmni(bh, parentSpanInst);
+      //appendnew_next_sd_Q6O5gIdDjkxbhMdz
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_Q6O5gIdDjkxbhMdz',
+        spanInst,
+        'sd_Q6O5gIdDjkxbhMdz'
+      );
+    }
+  }
+
+  async sd_TcKHIgUtKSz6qmni(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(200).send(bh.result);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_TcKHIgUtKSz6qmni');
+    }
+  }
+
+  async sd_YUZy02IqT07gy1tn(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_YUZy02IqT07gy1tn',
+      parentSpanInst
+    );
+    try {
+      bh.payload = {
+        to: bh.input.body.email,
+        subject: '<b> REGISTRATION UNSUCCESSFUL </b>',
+        from: 'Capitec',
+        body: `Your application to bank with Capitec was not approved.
+   <br>
+   <br>
+   <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/>  </center>`,
+      };
+
+      bh.status = 200;
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_SImLNw21YIVEUAms(bh, parentSpanInst);
+      //appendnew_next_sd_YUZy02IqT07gy1tn
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_YUZy02IqT07gy1tn',
+        spanInst,
+        'sd_YUZy02IqT07gy1tn'
+      );
+    }
+  }
+
+  async sd_SImLNw21YIVEUAms(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_SImLNw21YIVEUAms',
+      parentSpanInst
+    );
+    try {
+      let mailConfigObj = this.sdService.getConfigObj(
+        'emailout-config',
+        'sd_bkwqQKmMI8faGDdO'
+      );
+      let server = mailConfigObj.server;
+      let port = mailConfigObj.port;
+      let secure = mailConfigObj.secure;
+      let tls = mailConfigObj.tls;
+      let userid = mailConfigObj.userid;
+      let password = mailConfigObj.password;
+      let emailServiceInstance = EmailOutService.getInstance();
+      bh.result = await emailServiceInstance.sendEmail(
+        {
+          server,
+          port,
+          secure,
+          tls,
+        },
+        {
+          userid,
+          password,
+          to: bh.input.body.email,
+          subject: bh.payload.subject,
+          body: undefined,
+          cc: undefined,
+          bcc: undefined,
+          from: bh.payload.from,
+          html: bh.payload.body,
+          iCal: undefined,
+          routingOptions: undefined,
+          contentOptions: undefined,
+          securityOptions: undefined,
+          headerOptions: undefined,
+          attachments: [],
+        }
+      );
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_TcKHIgUtKSz6qmni(bh, parentSpanInst);
+      //appendnew_next_sd_SImLNw21YIVEUAms
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_SImLNw21YIVEUAms',
+        spanInst,
+        'sd_SImLNw21YIVEUAms'
+      );
+    }
+  }
+
+  async sd_mhe6dRuGGK3uEJCF(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_mhe6dRuGGK3uEJCF',
+      parentSpanInst
+    );
+    try {
+      bh.search = {
+        query: { email: bh.input.body.email },
+        collection: 'users',
+      };
+
+      bh.filter = { email: bh.input.body['email'] };
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_OLUA6D209KtJiSlc(bh, parentSpanInst);
+      //appendnew_next_sd_mhe6dRuGGK3uEJCF
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_mhe6dRuGGK3uEJCF',
+        spanInst,
+        'sd_mhe6dRuGGK3uEJCF'
+      );
+    }
+  }
+
+  async sd_OLUA6D209KtJiSlc(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_OLUA6D209KtJiSlc',
+      parentSpanInst
+    );
+    try {
+      let outputVariables = await this.toCheckIfTheUserExists(
+        spanInst,
+        bh.search
+      );
+      bh.result = outputVariables.local.result;
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_sa4x6ewisc0U4fqq(bh, parentSpanInst);
+      //appendnew_next_sd_OLUA6D209KtJiSlc
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_OLUA6D209KtJiSlc',
+        spanInst,
+        'sd_OLUA6D209KtJiSlc'
+      );
+    }
+  }
+
+  async sd_sa4x6ewisc0U4fqq(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_sa4x6ewisc0U4fqq',
+      parentSpanInst
+    );
+    try {
+      bh.result = await MongoPersistance.getInstance().findOneAndDelete(
+        'sd_Kkkscf5YGu1U4UWP',
+        bh.search.collection,
+        bh.filter,
+        bh.option,
+        bh.option
+      );
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_YBIuyekp2L72ixYI(bh, parentSpanInst);
+      //appendnew_next_sd_sa4x6ewisc0U4fqq
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_sa4x6ewisc0U4fqq',
+        spanInst,
+        'sd_sa4x6ewisc0U4fqq'
+      );
+    }
+  }
+
+  async sd_YBIuyekp2L72ixYI(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(200).send(bh.result);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_YBIuyekp2L72ixYI');
+    }
+  }
+
+  async sd_2pnSdVCyfl7FNdGx(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_2pnSdVCyfl7FNdGx',
+      parentSpanInst
+    );
+    try {
+      bh.file = bh.input.files.proof_of_residence[0];
+
+      bh.file['email'] = bh.emails;
+      bh.doc = {
+        collection: 'Proof_of_residence',
+      };
+
+      console.log('LOOK HERE ==>', bh.emails);
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_TPSoLDHqp4ctSrqo(bh, parentSpanInst);
+      //appendnew_next_sd_2pnSdVCyfl7FNdGx
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_2pnSdVCyfl7FNdGx',
+        spanInst,
+        'sd_2pnSdVCyfl7FNdGx'
+      );
+    }
+  }
+
+  async sd_TPSoLDHqp4ctSrqo(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_TPSoLDHqp4ctSrqo',
+      parentSpanInst
+    );
+    try {
+      let fileInServiceInstance = FileInService.getInstance();
+      bh.result = await fileInServiceInstance.fileIn({
+        filepath: bh.file.path,
+        format: 'buffer',
+        encoding: 'utf8',
+      });
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_C8IZoIinakp9r0kb(bh, parentSpanInst);
+      //appendnew_next_sd_TPSoLDHqp4ctSrqo
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_TPSoLDHqp4ctSrqo',
+        spanInst,
+        'sd_TPSoLDHqp4ctSrqo'
+      );
+    }
+  }
+
+  async sd_C8IZoIinakp9r0kb(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_C8IZoIinakp9r0kb',
+      parentSpanInst
+    );
+    try {
+      bh.dataString = bh.result.toString();
+      bh.result = bh.dataString;
+
+      console.log('result', bh.result);
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_CDxctjftAsrDISTV(bh, parentSpanInst);
+      //appendnew_next_sd_C8IZoIinakp9r0kb
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_C8IZoIinakp9r0kb',
+        spanInst,
+        'sd_C8IZoIinakp9r0kb'
+      );
+    }
+  }
+
+  async sd_CDxctjftAsrDISTV(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_CDxctjftAsrDISTV',
+      parentSpanInst
+    );
+    try {
+      bh.result = await MongoPersistance.getInstance().insertOne(
+        'sd_Kkkscf5YGu1U4UWP',
+        bh.doc.collection,
+        bh.file,
+        bh.buffer,
+        bh.buffer
+      );
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_nOb4lYosXVYPRmpt(bh, parentSpanInst);
+      //appendnew_next_sd_CDxctjftAsrDISTV
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_CDxctjftAsrDISTV',
+        spanInst,
+        'sd_CDxctjftAsrDISTV'
+      );
+    }
+  }
+
+  async sd_nOb4lYosXVYPRmpt(bh, parentSpanInst) {
+    try {
+      const readable = new Readable();
+      readable._read = () => {}; // _read is required but you can noop it
+      // setting buffer
+      readable.push(bh.file);
+      readable.push(null);
+      // setting status
+      bh.web.res.status(200);
+      readable.pipe(bh.web.res);
+      bh.readable = readable;
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_nOb4lYosXVYPRmpt');
+    }
+  }
+
+  async sd_uokvLXcME4b47mIE(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_uokvLXcME4b47mIE',
+      parentSpanInst
+    );
+    try {
+      bh.file = bh.input.files.pictures[0];
+
+      bh.file['email'] = bh.emails;
+      bh.doc = {
+        collection: 'pictures',
+      };
+
+      console.log('LOOK HERE ==>', bh.emails);
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_Gq43Mp6tQu3JLi70(bh, parentSpanInst);
+      //appendnew_next_sd_uokvLXcME4b47mIE
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_uokvLXcME4b47mIE',
+        spanInst,
+        'sd_uokvLXcME4b47mIE'
+      );
+    }
+  }
+
+  async sd_Gq43Mp6tQu3JLi70(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_Gq43Mp6tQu3JLi70',
+      parentSpanInst
+    );
+    try {
+      let fileInServiceInstance = FileInService.getInstance();
+      bh.result = await fileInServiceInstance.fileIn({
+        filepath: bh.file.path,
+        format: 'buffer',
+        encoding: 'utf8',
+      });
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_yK0YzpyAgug60cmD(bh, parentSpanInst);
+      //appendnew_next_sd_Gq43Mp6tQu3JLi70
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_Gq43Mp6tQu3JLi70',
+        spanInst,
+        'sd_Gq43Mp6tQu3JLi70'
+      );
+    }
+  }
+
+  async sd_yK0YzpyAgug60cmD(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_yK0YzpyAgug60cmD',
+      parentSpanInst
+    );
+    try {
+      bh.dataString = bh.result.toString();
+      bh.result = bh.dataString;
+
+      console.log('result', bh.result);
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_vfqnU1o3r5i7icy0(bh, parentSpanInst);
+      //appendnew_next_sd_yK0YzpyAgug60cmD
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_yK0YzpyAgug60cmD',
+        spanInst,
+        'sd_yK0YzpyAgug60cmD'
+      );
+    }
+  }
+
+  async sd_vfqnU1o3r5i7icy0(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_vfqnU1o3r5i7icy0',
+      parentSpanInst
+    );
+    try {
+      bh.result = await MongoPersistance.getInstance().insertOne(
+        'sd_Kkkscf5YGu1U4UWP',
+        bh.doc.collection,
+        bh.file,
+        bh.buffer,
+        bh.buffer
+      );
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_HUYr3nZYciEi4OsC(bh, parentSpanInst);
+      //appendnew_next_sd_vfqnU1o3r5i7icy0
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_vfqnU1o3r5i7icy0',
+        spanInst,
+        'sd_vfqnU1o3r5i7icy0'
+      );
+    }
+  }
+
+  async sd_HUYr3nZYciEi4OsC(bh, parentSpanInst) {
+    try {
+      const readable = new Readable();
+      readable._read = () => {}; // _read is required but you can noop it
+      // setting buffer
+      readable.push(bh.file);
+      readable.push(null);
+      // setting status
+      bh.web.res.status(200);
+      readable.pipe(bh.web.res);
+      bh.readable = readable;
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_HUYr3nZYciEi4OsC');
     }
   }
 

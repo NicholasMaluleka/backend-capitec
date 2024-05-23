@@ -79,20 +79,7 @@
             ]
         }
     },
-    "/download": {
-        "get": {
-            "summary": "",
-            "description": "",
-            "consumes": [],
-            "produces": [],
-            "parameters": [],
-            "responses": {},
-            "tags": [
-                "authentication"
-            ]
-        }
-    },
-    "/upload-file": {
+    "/upload-ID": {
         "post": {
             "summary": "",
             "description": "",
@@ -106,6 +93,58 @@
         }
     },
     "/admin-log-in": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/update-admin": {
+        "put": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/delete": {
+        "delete": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/upload-proof": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/upload-picture": {
         "post": {
             "summary": "",
             "description": "",
