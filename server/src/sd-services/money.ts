@@ -1122,7 +1122,7 @@ export class money {
     );
     try {
       bh.search = {
-        collection: 'loans',
+        collection: 'money-transfer',
       };
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_IFqDVGrMoiNp0Qb2(bh, parentSpanInst);
