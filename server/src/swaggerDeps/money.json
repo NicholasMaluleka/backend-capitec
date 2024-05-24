@@ -130,5 +130,50 @@
                 "money"
             ]
         }
+    },
+    "/add-beneficiary-electricity": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "multipart/form-data"
+            ],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "money"
+            ]
+        }
+    },
+    "/add-beneficiary-airtime": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "multipart/form-data"
+            ],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "money"
+            ]
+        }
+    },
+    "/add-beneficiary-money": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [
+                "multipart/form-data"
+            ],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "money"
+            ]
+        }
     }
 }

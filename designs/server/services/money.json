@@ -3044,5 +3044,764 @@
         "generateNext": false,
         "serviceName": "money",
         "generated": true
+    },
+    {
+        "id": "sd_pgHCjAvi3BYkVBCW",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "add beneficiary electricity",
+        "path": "/add-beneficiary-electricity",
+        "uploadpath": "\"C:\\\\Users\\\\User\\\\Desktop\\\\capitec-app\\\\src\\\\assets\\\\uploads\"",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": true,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": {
+            "type": "path",
+            "fileOptions": [
+                {
+                    "name": "ID",
+                    "maxCount": 1
+                }
+            ],
+            "path": "\"C:\\\\Users\\\\User\\\\Desktop\\\\capitec-app\\\\src\\\\assets\\\\uploads\""
+        },
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "fileoptions": [
+                {
+                    "key": "ID",
+                    "value": "1",
+                    "rowId": "sd_v477ZXmJ3B5rb9Hb",
+                    "valid": true
+                }
+            ],
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "multipart/form-data",
+                    "rowId": "sd_NI0jnmZc7sR32v6G",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 1700,
+        "wires": [
+            [
+                "sd_zjrMOpGBu6CVDJMU"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "C:\\Users\\User\\Desktop\\capitec-app\\src\\assets\\uploads",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "money",
+        "functionName": "sd_pgHCjAvi3BYkVBCW"
+    },
+    {
+        "id": "sd_zjrMOpGBu6CVDJMU",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "filter-electricity",
+        "script": "       bh.collection = 'beneficiary-electricity'",
+        "functionName": "filterElectricity",
+        "category": "Function",
+        "x": 205,
+        "y": 1700,
+        "wires": [
+            [
+                "sd_5xnXt6jezK3MmVvA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_5xnXt6jezK3MmVvA",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.status = 200\n\ndelete\nbh.input.body['collection'] ",
+        "functionName": "sd_5xnXt6jezK3MmVvA",
+        "category": "Function",
+        "x": 325,
+        "y": 1700,
+        "wires": [
+            [
+                "sd_Rg8FTozR98T11yMt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_45UQRk2CIMFitYks",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "bh",
+            "value": "status",
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": "bh.status",
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_45UQRk2CIMFitYks",
+        "category": "HTTP",
+        "x": 545,
+        "y": 1700,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_Rg8FTozR98T11yMt",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_Kkkscf5YGu1U4UWP",
+        "collection": "bh.collection",
+        "options": "bh.option",
+        "resultMapping": "bh.result",
+        "operation": "insertOne",
+        "argumentArray": [
+            "document",
+            "options"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh.input.body",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_Rg8FTozR98T11yMt",
+        "category": "Storage",
+        "x": 440,
+        "y": 1700,
+        "wires": [
+            [
+                "sd_45UQRk2CIMFitYks"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "option",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "document": {
+                "type": "bh",
+                "value": "input.body",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_M2CoA82pKhYgdUAh",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "add beneficiary airtime",
+        "path": "/add-beneficiary-airtime",
+        "uploadpath": "\"C:\\\\Users\\\\User\\\\Desktop\\\\capitec-app\\\\src\\\\assets\\\\uploads\"",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": true,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": {
+            "type": "path",
+            "fileOptions": [
+                {
+                    "name": "ID",
+                    "maxCount": 1
+                }
+            ],
+            "path": "\"C:\\\\Users\\\\User\\\\Desktop\\\\capitec-app\\\\src\\\\assets\\\\uploads\""
+        },
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "fileoptions": [
+                {
+                    "key": "ID",
+                    "value": "1",
+                    "rowId": "sd_v477ZXmJ3B5rb9Hb",
+                    "valid": true
+                }
+            ],
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "multipart/form-data",
+                    "rowId": "sd_NI0jnmZc7sR32v6G",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 1800,
+        "wires": [
+            [
+                "sd_1K8U3sRyh8cDJYwM"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "C:\\Users\\User\\Desktop\\capitec-app\\src\\assets\\uploads",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "money",
+        "functionName": "sd_M2CoA82pKhYgdUAh"
+    },
+    {
+        "id": "sd_1K8U3sRyh8cDJYwM",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "filter-airtime",
+        "script": "       bh.collection = 'beneficiary-airtime'",
+        "functionName": "filterAirtime",
+        "category": "Function",
+        "x": 205,
+        "y": 1800,
+        "wires": [
+            [
+                "sd_JfjbeT9wxKxStfwl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_JfjbeT9wxKxStfwl",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.status = 200\n\ndelete\nbh.input.body['collection'] ",
+        "functionName": "sd_JfjbeT9wxKxStfwl",
+        "category": "Function",
+        "x": 325,
+        "y": 1800,
+        "wires": [
+            [
+                "sd_dXL1k2SX9n4HDCXH"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_HVKfdjgli9qHCP1e",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "bh",
+            "value": "status",
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": "bh.status",
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_HVKfdjgli9qHCP1e",
+        "category": "HTTP",
+        "x": 545,
+        "y": 1800,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_dXL1k2SX9n4HDCXH",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_Kkkscf5YGu1U4UWP",
+        "collection": "bh.collection",
+        "options": "bh.option",
+        "resultMapping": "bh.result",
+        "operation": "insertOne",
+        "argumentArray": [
+            "document",
+            "options"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh.input.body",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_dXL1k2SX9n4HDCXH",
+        "category": "Storage",
+        "x": 440,
+        "y": 1800,
+        "wires": [
+            [
+                "sd_HVKfdjgli9qHCP1e"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "option",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "document": {
+                "type": "bh",
+                "value": "input.body",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_GBTeHr8fgzDZQ5Ym",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "add beneficiary-money",
+        "path": "/add-beneficiary-money",
+        "uploadpath": "\"C:\\\\Users\\\\User\\\\Desktop\\\\capitec-app\\\\src\\\\assets\\\\uploads\"",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": true,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": {
+            "type": "path",
+            "fileOptions": [
+                {
+                    "name": "ID",
+                    "maxCount": 1
+                }
+            ],
+            "path": "\"C:\\\\Users\\\\User\\\\Desktop\\\\capitec-app\\\\src\\\\assets\\\\uploads\""
+        },
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "fileoptions": [
+                {
+                    "key": "ID",
+                    "value": "1",
+                    "rowId": "sd_v477ZXmJ3B5rb9Hb",
+                    "valid": true
+                }
+            ],
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": [
+                {
+                    "key": "multipart/form-data",
+                    "rowId": "sd_NI0jnmZc7sR32v6G",
+                    "valid": true
+                }
+            ]
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 67.14286041259766,
+        "y": 1908.764892578125,
+        "wires": [
+            [
+                "sd_YxtS3NP9gMdSWyhn"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "C:\\Users\\User\\Desktop\\capitec-app\\src\\assets\\uploads",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "money",
+        "functionName": "sd_GBTeHr8fgzDZQ5Ym"
+    },
+    {
+        "id": "sd_YxtS3NP9gMdSWyhn",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "filter-electricity-money",
+        "script": "       bh.collection = 'beneficiary-money'",
+        "functionName": "filterElectricityMoney",
+        "category": "Function",
+        "x": 207.14286041259766,
+        "y": 1908.764892578125,
+        "wires": [
+            [
+                "sd_djZhWX8w8ksomFwy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_djZhWX8w8ksomFwy",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.status = 200\n\ndelete\nbh.input.body['collection'] ",
+        "functionName": "sd_djZhWX8w8ksomFwy",
+        "category": "Function",
+        "x": 327.14286041259766,
+        "y": 1908.764892578125,
+        "wires": [
+            [
+                "sd_SUY3WTxmMDqfT5h6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_b9vqyujQRfV87uyi",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "bh",
+            "value": "status",
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": "bh.status",
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_b9vqyujQRfV87uyi",
+        "category": "HTTP",
+        "x": 547.1428604125977,
+        "y": 1908.764892578125,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_SUY3WTxmMDqfT5h6",
+        "type": "Mongodb",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_Kkkscf5YGu1U4UWP",
+        "collection": "bh.collection",
+        "options": "bh.option",
+        "resultMapping": "bh.result",
+        "operation": "insertOne",
+        "argumentArray": [
+            "document",
+            "options"
+        ],
+        "aggregate": "",
+        "operations": "",
+        "query": "bh",
+        "fieldOrSpec": "",
+        "filter": "",
+        "key": "",
+        "docId": "",
+        "indexName": "",
+        "replacement": "",
+        "update": "",
+        "xAxis": "",
+        "yAxis": "",
+        "indexes": "",
+        "docs": "",
+        "document": "bh.input.body",
+        "newName": "",
+        "doc": "",
+        "filePath": "",
+        "fileName": "",
+        "pipeline": "",
+        "functionName": "sd_SUY3WTxmMDqfT5h6",
+        "category": "Storage",
+        "x": 442.14286041259766,
+        "y": 1908.764892578125,
+        "wires": [
+            [
+                "sd_b9vqyujQRfV87uyi"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "collection": {
+                "type": "bh",
+                "value": "collection",
+                "constant": false
+            },
+            "options": {
+                "type": "bh",
+                "value": "option",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            },
+            "query": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "document": {
+                "type": "bh",
+                "value": "input.body",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
     }
 ]
