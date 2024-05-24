@@ -118,7 +118,7 @@
             ]
         }
     },
-    "/get-beneficiary": {
+    "/get-beneficiary-money": {
         "get": {
             "summary": "",
             "description": "",
@@ -168,6 +168,32 @@
             "consumes": [
                 "multipart/form-data"
             ],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "money"
+            ]
+        }
+    },
+    "/get-beneficiary-airtime": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "money"
+            ]
+        }
+    },
+    "/get-beneficiary-electricity": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
             "produces": [],
             "parameters": [],
             "responses": {},

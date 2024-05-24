@@ -380,7 +380,7 @@ export class money {
     );
 
     this.app['get'](
-      `${this.serviceBasePath}/get-beneficiary`,
+      `${this.serviceBasePath}/get-beneficiary-money`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -522,6 +522,70 @@ export class money {
           //appendnew_next_sd_GBTeHr8fgzDZQ5Ym
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_GBTeHr8fgzDZQ5Ym');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
+
+    this.app['get'](
+      `${this.serviceBasePath}/get-beneficiary-airtime`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_25PAiAXqFm62q14J(bh, parentSpanInst);
+          //appendnew_next_sd_b1wO3uBRfmodvakP
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_b1wO3uBRfmodvakP');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
+
+    this.app['get'](
+      `${this.serviceBasePath}/get-beneficiary-electricity`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_xiEHCrANfLHAt0J9(bh, parentSpanInst);
+          //appendnew_next_sd_zWZ29yaI5P45Vm9a
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_zWZ29yaI5P45Vm9a');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
@@ -1780,7 +1844,7 @@ export class money {
     );
     try {
       bh.search = {
-        collection: 'beneficiary',
+        collection: 'beneficiary-money',
       };
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_b4DVNUeCvJJ57jH5(bh, parentSpanInst);
@@ -2158,6 +2222,290 @@ export class money {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_b9vqyujQRfV87uyi');
+    }
+  }
+
+  async sd_25PAiAXqFm62q14J(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_25PAiAXqFm62q14J',
+      parentSpanInst
+    );
+    try {
+      bh.search = {
+        collection: 'beneficiary-airtime',
+      };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_HxgprNJOxyVLvIAf(bh, parentSpanInst);
+      //appendnew_next_sd_25PAiAXqFm62q14J
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_25PAiAXqFm62q14J',
+        spanInst,
+        'sd_25PAiAXqFm62q14J'
+      );
+    }
+  }
+
+  async sd_HxgprNJOxyVLvIAf(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_HxgprNJOxyVLvIAf',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXuInstance: SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu.authentication =
+        SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu.authentication.getInstance();
+      let outputVariables =
+        await SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXuInstance.toCheckIfTheUserExists(
+          spanInst,
+          bh.search
+        );
+      bh.result = outputVariables.local.result;
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_1h7zG2Fgh77yAA2I(bh, parentSpanInst);
+      //appendnew_next_sd_HxgprNJOxyVLvIAf
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_HxgprNJOxyVLvIAf',
+        spanInst,
+        'sd_HxgprNJOxyVLvIAf'
+      );
+    }
+  }
+
+  async sd_1h7zG2Fgh77yAA2I(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_1h7zG2Fgh77yAA2I',
+      parentSpanInst
+    );
+    try {
+      if (
+        this.sdService.operators['nempty'](
+          bh.result,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_DMAkjZqEStPIenoC(bh, parentSpanInst);
+      } else {
+        bh = await this.sd_O91RDaBbJOFG4pOQ(bh, parentSpanInst);
+      }
+      this.tracerService.sendData(spanInst, bh);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_1h7zG2Fgh77yAA2I',
+        spanInst,
+        'sd_1h7zG2Fgh77yAA2I'
+      );
+    }
+  }
+
+  async sd_DMAkjZqEStPIenoC(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_DMAkjZqEStPIenoC',
+      parentSpanInst
+    );
+    try {
+      bh.status = 200;
+      bh.result = bh.result;
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_KifReum1fHR110gl(bh, parentSpanInst);
+      //appendnew_next_sd_DMAkjZqEStPIenoC
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_DMAkjZqEStPIenoC',
+        spanInst,
+        'sd_DMAkjZqEStPIenoC'
+      );
+    }
+  }
+
+  async sd_KifReum1fHR110gl(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(bh.status).send(bh.result);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_KifReum1fHR110gl');
+    }
+  }
+
+  async sd_O91RDaBbJOFG4pOQ(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_O91RDaBbJOFG4pOQ',
+      parentSpanInst
+    );
+    try {
+      bh.status = 404;
+
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_KifReum1fHR110gl(bh, parentSpanInst);
+      //appendnew_next_sd_O91RDaBbJOFG4pOQ
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_O91RDaBbJOFG4pOQ',
+        spanInst,
+        'sd_O91RDaBbJOFG4pOQ'
+      );
+    }
+  }
+
+  async sd_xiEHCrANfLHAt0J9(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_xiEHCrANfLHAt0J9',
+      parentSpanInst
+    );
+    try {
+      bh.search = {
+        collection: 'beneficiary-electricity',
+      };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_4hLEYvjPAniM5ct0(bh, parentSpanInst);
+      //appendnew_next_sd_xiEHCrANfLHAt0J9
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_xiEHCrANfLHAt0J9',
+        spanInst,
+        'sd_xiEHCrANfLHAt0J9'
+      );
+    }
+  }
+
+  async sd_4hLEYvjPAniM5ct0(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_4hLEYvjPAniM5ct0',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXuInstance: SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu.authentication =
+        SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu.authentication.getInstance();
+      let outputVariables =
+        await SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXuInstance.toCheckIfTheUserExists(
+          spanInst,
+          bh.search
+        );
+      bh.result = outputVariables.local.result;
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_UW8ywBMerKCdkePp(bh, parentSpanInst);
+      //appendnew_next_sd_4hLEYvjPAniM5ct0
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_4hLEYvjPAniM5ct0',
+        spanInst,
+        'sd_4hLEYvjPAniM5ct0'
+      );
+    }
+  }
+
+  async sd_UW8ywBMerKCdkePp(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_UW8ywBMerKCdkePp',
+      parentSpanInst
+    );
+    try {
+      if (
+        this.sdService.operators['nempty'](
+          bh.result,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_QrtKIKlL39OA9SMM(bh, parentSpanInst);
+      } else {
+        bh = await this.sd_1y2gvVn3KdlbRiNn(bh, parentSpanInst);
+      }
+      this.tracerService.sendData(spanInst, bh);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_UW8ywBMerKCdkePp',
+        spanInst,
+        'sd_UW8ywBMerKCdkePp'
+      );
+    }
+  }
+
+  async sd_QrtKIKlL39OA9SMM(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_QrtKIKlL39OA9SMM',
+      parentSpanInst
+    );
+    try {
+      bh.status = 200;
+      bh.result = bh.result;
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_5S4vIfZGRd7lBAGK(bh, parentSpanInst);
+      //appendnew_next_sd_QrtKIKlL39OA9SMM
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_QrtKIKlL39OA9SMM',
+        spanInst,
+        'sd_QrtKIKlL39OA9SMM'
+      );
+    }
+  }
+
+  async sd_5S4vIfZGRd7lBAGK(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(bh.status).send(bh.result);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_5S4vIfZGRd7lBAGK');
+    }
+  }
+
+  async sd_1y2gvVn3KdlbRiNn(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_1y2gvVn3KdlbRiNn',
+      parentSpanInst
+    );
+    try {
+      bh.status = 404;
+
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_5S4vIfZGRd7lBAGK(bh, parentSpanInst);
+      //appendnew_next_sd_1y2gvVn3KdlbRiNn
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_1y2gvVn3KdlbRiNn',
+        spanInst,
+        'sd_1y2gvVn3KdlbRiNn'
+      );
     }
   }
 
