@@ -646,8 +646,8 @@ export class money {
       };
 
       bh.input.body['_id'] = new Date().getTime();
-      bh.input.body['money-in'] = 'payment received';
-      bh.input.body['money-out'] = 'fees';
+      bh.input.body['moneyIn'] = 'payment received';
+      bh.input.body['moneyOut'] = 'fees';
 
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_Pw4KZCHOFtLfdzC8(bh, parentSpanInst);
@@ -1122,7 +1122,7 @@ export class money {
     );
     try {
       bh.search = {
-        collection: 'loans',
+        collection: 'money-transfer',
       };
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_IFqDVGrMoiNp0Qb2(bh, parentSpanInst);

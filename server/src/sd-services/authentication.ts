@@ -492,6 +492,38 @@ export class authentication {
         this.generatedMiddlewares
       )
     );
+
+    this.app['get'](
+      `${this.serviceBasePath}/get-admin`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_NSfFFW6lQC5q0rMT(bh, parentSpanInst);
+          //appendnew_next_sd_F2ndpzV8A4Vlc8JJ
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_F2ndpzV8A4Vlc8JJ');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_authentication_HttpIn
   }
   //   service flows_authentication
@@ -1001,13 +1033,13 @@ export class authentication {
       bh.input.body['_id'] = new Date().getTime();
       bh.input.body['status'] = 'pending';
       bh.input.body['available balance'] = 50;
-      bh.input.body['cash-withdrawal-limit'] = 5000;
-      bh.input.body['card-purchases-limit'] = 50000;
-      bh.input.body['online/scan-to-pay/phone'] = 50000;
+      bh.input.body['cash_withdrawal_limit'] = 500;
+      bh.input.body['card_purchases_limit'] = 500;
+      bh.input.body['online_scan-to-pay_phone'] = 500;
 
-      bh.input.body['cash-withdrawal-limit-temp'] = 5000;
-      bh.input.body['card-purchases-limit-temp'] = 50000;
-      bh.input.body['online/scan-to-pay/phone-temp'] = 50000;
+      bh.input.body['cash_withdrawal_limit_temp'] = 500;
+      bh.input.body['card_purchases_limit_temp'] = 500;
+      bh.input.body['online_scan_to_pay_phone_temp'] = 500;
 
       bh.input.body['date'] = 'N/A';
       bh.input.body['registered'] = 'true';
@@ -1470,7 +1502,7 @@ export class authentication {
       bh.body = bh.input.body;
 
       bh.body = {
-        email: 'kimberleymnguni@gmail.com',
+        email: 'kimberlymnguni@gmail.com',
         password: '1234',
         collection: 'admin',
       };
@@ -1957,7 +1989,7 @@ export class authentication {
       } else if (
         this.sdService.operators['eq'](
           bh.input.body.status,
-          'declined',
+          'rejected',
           undefined,
           undefined
         )
@@ -2575,6 +2607,145 @@ Your account number is ${bh.accountNo}
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_HUYr3nZYciEi4OsC');
+    }
+  }
+
+  async sd_NSfFFW6lQC5q0rMT(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_NSfFFW6lQC5q0rMT',
+      parentSpanInst
+    );
+    try {
+      bh.search = {
+        collection: 'admin',
+      };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_iHnF72paKTdIryVk(bh, parentSpanInst);
+      //appendnew_next_sd_NSfFFW6lQC5q0rMT
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_NSfFFW6lQC5q0rMT',
+        spanInst,
+        'sd_NSfFFW6lQC5q0rMT'
+      );
+    }
+  }
+
+  async sd_iHnF72paKTdIryVk(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_iHnF72paKTdIryVk',
+      parentSpanInst
+    );
+    try {
+      let outputVariables = await this.toCheckIfTheUserExists(
+        spanInst,
+        bh.search
+      );
+      bh.result = outputVariables.local.result;
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_L8BtUmbXbiWHCjAA(bh, parentSpanInst);
+      //appendnew_next_sd_iHnF72paKTdIryVk
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_iHnF72paKTdIryVk',
+        spanInst,
+        'sd_iHnF72paKTdIryVk'
+      );
+    }
+  }
+
+  async sd_L8BtUmbXbiWHCjAA(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_L8BtUmbXbiWHCjAA',
+      parentSpanInst
+    );
+    try {
+      if (
+        this.sdService.operators['nempty'](
+          bh.result,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_2BCSbXP44mH4qjf4(bh, parentSpanInst);
+      } else {
+        bh = await this.sd_blzK0KKVRgHMg014(bh, parentSpanInst);
+      }
+      this.tracerService.sendData(spanInst, bh);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_L8BtUmbXbiWHCjAA',
+        spanInst,
+        'sd_L8BtUmbXbiWHCjAA'
+      );
+    }
+  }
+
+  async sd_2BCSbXP44mH4qjf4(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_2BCSbXP44mH4qjf4',
+      parentSpanInst
+    );
+    try {
+      bh.status = 200;
+      bh.result = bh.result;
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_MrHH4LDqzVd2kl1V(bh, parentSpanInst);
+      //appendnew_next_sd_2BCSbXP44mH4qjf4
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_2BCSbXP44mH4qjf4',
+        spanInst,
+        'sd_2BCSbXP44mH4qjf4'
+      );
+    }
+  }
+
+  async sd_MrHH4LDqzVd2kl1V(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(bh.status).send(bh.result);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_MrHH4LDqzVd2kl1V');
+    }
+  }
+
+  async sd_blzK0KKVRgHMg014(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_blzK0KKVRgHMg014',
+      parentSpanInst
+    );
+    try {
+      bh.status = 404;
+
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_MrHH4LDqzVd2kl1V(bh, parentSpanInst);
+      //appendnew_next_sd_blzK0KKVRgHMg014
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_blzK0KKVRgHMg014',
+        spanInst,
+        'sd_blzK0KKVRgHMg014'
+      );
     }
   }
 
