@@ -2984,7 +2984,7 @@ Your account number is ${bh.accountNo}
       bh.payload = {
         to: bh.input.body.email,
         subject: 'Verification Code',
-        from: 'Neutri-Care',
+        from: 'Capitec',
         body: `Here is your verification code ${bh.input.body.code}`,
       };
 

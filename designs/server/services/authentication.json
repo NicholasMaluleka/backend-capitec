@@ -4651,7 +4651,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.payload = {\n    to: bh.input.body.email,\n    subject: 'Verification Code',\n    from: 'Neutri-Care',\n    body: `Here is your verification code ${bh.input.body.code}`,\n}\n\nconsole.log(bh.payload)\n\nbh.status = 200;",
+        "script": "bh.payload = {\n    to: bh.input.body.email,\n    subject: 'Verification Code',\n    from: 'Capitec',\n    body: `Here is your verification code ${bh.input.body.code}`,\n}\n\nconsole.log(bh.payload)\n\nbh.status = 200;",
         "functionName": "sd_KNNBuEkTGeBKqvPG",
         "category": "Function",
         "x": 580,
@@ -4677,7 +4677,7 @@
         "functionName": "sd_8AAtiqOuCVbM50J4",
         "category": "Function",
         "x": 585,
-        "y": 3140,
+        "y": 3100,
         "wires": [
             [
                 "sd_XxceEDZ2WugwuKJB"
@@ -4732,8 +4732,8 @@
         },
         "functionName": "sd_XxceEDZ2WugwuKJB",
         "category": "HTTP",
-        "x": 800,
-        "y": 3080,
+        "x": 785,
+        "y": 3100,
         "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
