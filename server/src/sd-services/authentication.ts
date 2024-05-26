@@ -1135,7 +1135,7 @@ export class authentication {
       ) {
         bh = await this.ifError(bh, parentSpanInst);
       } else {
-        bh = await this.searchUsingAnEmail(bh, parentSpanInst);
+        bh = await this.sd_1PgsBoBZHTxIgHrz(bh, parentSpanInst);
       }
       this.tracerService.sendData(spanInst, bh);
 
@@ -1183,27 +1183,6 @@ export class authentication {
     }
   }
 
-  async searchUsingAnEmail(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'searchUsingAnEmail',
-      parentSpanInst
-    );
-    try {
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_1PgsBoBZHTxIgHrz(bh, parentSpanInst);
-      //appendnew_next_searchUsingAnEmail
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_PEtPIzN0a9fWLkvB',
-        spanInst,
-        'searchUsingAnEmail'
-      );
-    }
-  }
-
   async sd_1PgsBoBZHTxIgHrz(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
       'sd_1PgsBoBZHTxIgHrz',
@@ -1246,11 +1225,8 @@ export class authentication {
         subject: 'REGISTRATION SUCCESSFUL',
         from: 'Capitec',
         body: `Your application to bank with Capitec has been sent.
-    <br>
-    <br>
-<br>
-<br>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/>`,
+
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/></center>`,
       };
 
       bh.input.body['accountNumber'] = bh.accountNo;
@@ -2045,7 +2021,7 @@ export class authentication {
     try {
       bh.status = 404;
       bh.result = {
-        message: 'INVALID DETAILS',
+        message: 'INVALID DETAILS!',
       };
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jhfvpJLQq0j8fXSO(bh, parentSpanInst);
@@ -2163,11 +2139,8 @@ export class authentication {
         subject: 'APPLICATION SUCCESSFUL',
         from: 'Capitec',
         body: `Your application to bank with Capitec has been approved.
-    <br>
-    <br>
 Your account number is ${bh.accountNo}
-<br>
-<br>
+
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/></center>`,
       };
 
@@ -2298,8 +2271,7 @@ Your account number is ${bh.accountNo}
         subject: '<b> REGISTRATION UNSUCCESSFUL </b>',
         from: 'Capitec',
         body: `Your application to bank with Capitec was not approved.
-   <br>
-   <br>
+   
    <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/>  </center>`,
       };
 
@@ -3045,7 +3017,7 @@ Your account number is ${bh.accountNo}
           contentOptions: undefined,
           securityOptions: undefined,
           headerOptions: undefined,
-          attachments: undefined,
+          attachments: [],
         }
       );
       this.tracerService.sendData(spanInst, bh);
