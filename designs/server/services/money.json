@@ -17,7 +17,7 @@
         "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
         "viewType": "server",
         "nodeType": "start",
-        "name": "airtime",
+        "name": "buy airtime",
         "path": "/buy-airtime",
         "uploadpath": "",
         "summary": "",
@@ -30,7 +30,6 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
-        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -65,8 +64,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_60BNLbiIpUVayAY8",
-        "generated": false
+        "functionName": "sd_60BNLbiIpUVayAY8"
     },
     {
         "id": "sd_6mdfSM2ofre2xeVL",
@@ -248,7 +246,7 @@
         "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
         "viewType": "server",
         "nodeType": "start",
-        "name": "electricity",
+        "name": "buy electricity",
         "path": "/buy-electricity",
         "uploadpath": "",
         "summary": "",
@@ -261,7 +259,6 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
-        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -296,8 +293,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_km6pcIJHHjl4EtKi",
-        "generated": false
+        "functionName": "sd_km6pcIJHHjl4EtKi"
     },
     {
         "id": "sd_US6fzZ3MTlO35CxO",
@@ -527,8 +523,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_xIBhpWD43UbWeZRC",
-        "generated": false
+        "functionName": "sd_xIBhpWD43UbWeZRC"
     },
     {
         "id": "sd_PcL1SOCo3VWgYpJM",
@@ -758,8 +753,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_1CzkgzcP8319IxLr",
-        "generated": false
+        "functionName": "sd_1CzkgzcP8319IxLr"
     },
     {
         "id": "sd_a3GLXtWfgmhnkp6C",
@@ -989,8 +983,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_3OviGai5r5P8bsS9",
-        "generated": false
+        "functionName": "sd_3OviGai5r5P8bsS9"
     },
     {
         "id": "sd_YipzuufjTxx4VnN2",
@@ -1072,9 +1065,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
         "generateNext": false,
-        "serviceName": "money"
+        "serviceName": "money",
+        "generated": true
     },
     {
         "id": "sd_eAczU2y4dCAH1VRy",
@@ -1251,8 +1244,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "money",
-        "generated": false
+        "serviceName": "money"
     },
     {
         "id": "sd_Uu80lqbuy1yUpJx2",
@@ -1343,7 +1335,6 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
-        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -1378,8 +1369,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_1jZLDEYQFXU9lMyU",
-        "generated": false
+        "functionName": "sd_1jZLDEYQFXU9lMyU"
     },
     {
         "id": "sd_CiIL3tc2dQmojqMa",
@@ -1461,9 +1451,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
         "generateNext": false,
-        "serviceName": "money"
+        "serviceName": "money",
+        "generated": true
     },
     {
         "id": "sd_PJfVuB3NawONkGpe",
@@ -1654,8 +1644,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_DEGzgdDizNJP1sry",
-        "generated": false
+        "functionName": "sd_DEGzgdDizNJP1sry"
     },
     {
         "id": "sd_vEhXYAGcb5qIAlt0",
@@ -1737,9 +1726,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
         "generateNext": false,
-        "serviceName": "money"
+        "serviceName": "money",
+        "generated": true
     },
     {
         "id": "sd_7ShMFUgkM4DAroxb",
@@ -1953,8 +1942,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_0GLKUm8ZfkhouX9A",
-        "generated": false
+        "functionName": "sd_0GLKUm8ZfkhouX9A"
     },
     {
         "id": "sd_zaF6MFIxG1hVBl7n",
@@ -2184,8 +2172,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_NIRNgGgnpquOO6nM",
-        "generated": false
+        "functionName": "sd_NIRNgGgnpquOO6nM"
     },
     {
         "id": "sd_0I0V6wpec5QQqAOF",
@@ -2805,6 +2792,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -2839,8 +2827,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_zhLzgy3rkdvq3Ugo",
-        "generated": false
+        "functionName": "sd_zhLzgy3rkdvq3Ugo"
     },
     {
         "id": "sd_Pc9ES0NNI9DYOQZL",
@@ -2922,9 +2909,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
         "generateNext": false,
-        "serviceName": "money"
+        "serviceName": "money",
+        "generated": true
     },
     {
         "id": "sd_FpVgakpDf5bqZqPJ",
@@ -3138,8 +3125,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_pgHCjAvi3BYkVBCW",
-        "generated": false
+        "functionName": "sd_pgHCjAvi3BYkVBCW"
     },
     {
         "id": "sd_zjrMOpGBu6CVDJMU",
@@ -3392,8 +3378,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_M2CoA82pKhYgdUAh",
-        "generated": false
+        "functionName": "sd_M2CoA82pKhYgdUAh"
     },
     {
         "id": "sd_1K8U3sRyh8cDJYwM",
@@ -3646,8 +3631,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_GBTeHr8fgzDZQ5Ym",
-        "generated": false
+        "functionName": "sd_GBTeHr8fgzDZQ5Ym"
     },
     {
         "id": "sd_YxtS3NP9gMdSWyhn",
@@ -3842,6 +3826,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -3876,8 +3861,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_b1wO3uBRfmodvakP",
-        "generated": false
+        "functionName": "sd_b1wO3uBRfmodvakP"
     },
     {
         "id": "sd_25PAiAXqFm62q14J",
@@ -3959,9 +3943,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
         "generateNext": false,
-        "serviceName": "money"
+        "serviceName": "money",
+        "generated": true
     },
     {
         "id": "sd_1h7zG2Fgh77yAA2I",
@@ -4117,6 +4101,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -4151,8 +4136,7 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_zWZ29yaI5P45Vm9a",
-        "generated": false
+        "functionName": "sd_zWZ29yaI5P45Vm9a"
     },
     {
         "id": "sd_xiEHCrANfLHAt0J9",
@@ -4234,9 +4218,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
         "generateNext": false,
-        "serviceName": "money"
+        "serviceName": "money",
+        "generated": true
     },
     {
         "id": "sd_UW8ywBMerKCdkePp",
@@ -4366,6 +4350,280 @@
         "wires": [
             [
                 "sd_5S4vIfZGRd7lBAGK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_TzG1zs8CYVHNZYLz",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "get airtime",
+        "path": "/get-airtime",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 625,
+        "y": 440,
+        "wires": [
+            [
+                "sd_orZPm3KlCQYstssR"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "money",
+        "functionName": "sd_TzG1zs8CYVHNZYLz"
+    },
+    {
+        "id": "sd_orZPm3KlCQYstssR",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.search = {\n    collection: 'airtime'\n}",
+        "functionName": "sd_orZPm3KlCQYstssR",
+        "category": "Function",
+        "x": 730,
+        "y": 440,
+        "wires": [
+            [
+                "sd_TpfeBAmraAokIIiE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_TpfeBAmraAokIIiE",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+            "type": "tab",
+            "createdDate": "2024-05-13T18:38:46.597Z",
+            "label": "authentication",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_KjP1tTXY8ubtVYLV",
+            "flowName": "toCheckIfTheUserExists"
+        },
+        "inputVariables": [
+            {
+                "key": "searchObj",
+                "map": true,
+                "valueType": "bh",
+                "value": "search"
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./authentication",
+        "startName": "toCheckIfTheUserExists",
+        "inputParams": [
+            "bh.search"
+        ],
+        "accept_bh": false,
+        "functionName": "sd_TpfeBAmraAokIIiE",
+        "category": "General",
+        "x": 850,
+        "y": 440,
+        "wires": [
+            [
+                "sd_JnkwC6IJ6HZAVtsJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_JnkwC6IJ6HZAVtsJ",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "result",
+        "propertyType": "bh",
+        "propertyGv": "bh.result",
+        "rules": [
+            {
+                "t": "nempty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_JnkwC6IJ6HZAVtsJ",
+        "category": "Function",
+        "x": 985,
+        "y": 440,
+        "wires": [
+            [
+                "sd_ZT4ewNodSB225r1F"
+            ],
+            [
+                "sd_vHbTXvjcu9SYgHVc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_ZT4ewNodSB225r1F",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.status = 200;\nbh.result = bh.result;",
+        "functionName": "sd_ZT4ewNodSB225r1F",
+        "category": "Function",
+        "x": 1105,
+        "y": 400,
+        "wires": [
+            [
+                "sd_nutfCUsCy7U81HUF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_nutfCUsCy7U81HUF",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "bh",
+            "value": "status",
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": "bh.status",
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_nutfCUsCy7U81HUF",
+        "category": "HTTP",
+        "x": 1225,
+        "y": 460,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_vHbTXvjcu9SYgHVc",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.status = 404;\n",
+        "functionName": "sd_vHbTXvjcu9SYgHVc",
+        "category": "Function",
+        "x": 1105,
+        "y": 540,
+        "wires": [
+            [
+                "sd_nutfCUsCy7U81HUF"
             ]
         ],
         "__n_excludedFromValidation__": {},

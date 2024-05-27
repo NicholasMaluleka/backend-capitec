@@ -1597,6 +1597,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -1741,8 +1742,8 @@
         "name": "",
         "headers": {},
         "responseBody": {
-            "type": "bh",
-            "value": "result",
+            "type": "bh.input",
+            "value": "body",
             "ssd_typedInputField": true
         },
         "httpcode": {
@@ -1754,8 +1755,8 @@
         "swaggerResponse": {},
         "responseMapping": {
             "status": "bh.status",
-            "obj": "bh.result",
-            "send": "bh.result"
+            "obj": "bh.input.body",
+            "send": "bh.input.body"
         },
         "dataModelIsArray": false,
         "cookies": [],
@@ -1937,7 +1938,6 @@
             "bin": "bh.result"
         },
         "dataModelIsArray": false,
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -4511,7 +4511,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.searchObj = {\n    'query': { 'email': bh.input.body.email },\n    'collection': 'admin'\n};",
+        "script": "bh.search = {\n    'query': { 'email': bh.input.body.email },\n    'collection': 'admin'\n};",
         "functionName": "sd_DJiCD0OLmbktXr7a",
         "category": "Function",
         "x": 245,
@@ -5021,6 +5021,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",

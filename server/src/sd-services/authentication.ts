@@ -1638,7 +1638,7 @@ export class authentication {
 
   async sd_WSbR9ZOsy4Zb7OTg(bh, parentSpanInst) {
     try {
-      bh.web.res.status(bh.status).send(bh.result);
+      bh.web.res.status(bh.status).send(bh.input.body);
 
       return bh;
     } catch (e) {
@@ -2898,7 +2898,7 @@ Your account number is ${bh.accountNo}
       parentSpanInst
     );
     try {
-      bh.searchObj = {
+      bh.search = {
         query: { email: bh.input.body.email },
         collection: 'admin',
       };
