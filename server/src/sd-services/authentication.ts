@@ -556,6 +556,38 @@ export class authentication {
         this.generatedMiddlewares
       )
     );
+
+    this.app['put'](
+      `${this.serviceBasePath}/update`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_FjHEtovdIeVGEE0G(bh, parentSpanInst);
+          //appendnew_next_sd_J4rsabFAz2mXqcbq
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_J4rsabFAz2mXqcbq');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_authentication_HttpIn
   }
   //   service flows_authentication
@@ -3064,6 +3096,73 @@ Your account number is ${bh.accountNo}
         spanInst,
         'sd_8AAtiqOuCVbM50J4'
       );
+    }
+  }
+
+  async sd_FjHEtovdIeVGEE0G(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_FjHEtovdIeVGEE0G',
+      parentSpanInst
+    );
+    try {
+      bh.collection = 'admin';
+      bh.filter = { email: bh.input.body['email'] };
+
+      delete bh.input.body.collection;
+      // delete bh.input.body['_id'];
+
+      bh.body = { $set: bh.input.body };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_9wuSKUFh6hzu2k73(bh, parentSpanInst);
+      //appendnew_next_sd_FjHEtovdIeVGEE0G
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_FjHEtovdIeVGEE0G',
+        spanInst,
+        'sd_FjHEtovdIeVGEE0G'
+      );
+    }
+  }
+
+  async sd_9wuSKUFh6hzu2k73(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_9wuSKUFh6hzu2k73',
+      parentSpanInst
+    );
+    try {
+      bh.result = await MongoPersistance.getInstance().findOneAndUpdate(
+        'sd_Kkkscf5YGu1U4UWP',
+        bh.collection,
+        bh.filter,
+        bh.body,
+        bh.option,
+        bh.option
+      );
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_lrT7M5q2CbxSEsoI(bh, parentSpanInst);
+      //appendnew_next_sd_9wuSKUFh6hzu2k73
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_9wuSKUFh6hzu2k73',
+        spanInst,
+        'sd_9wuSKUFh6hzu2k73'
+      );
+    }
+  }
+
+  async sd_lrT7M5q2CbxSEsoI(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(200).send(bh.result);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_lrT7M5q2CbxSEsoI');
     }
   }
 
