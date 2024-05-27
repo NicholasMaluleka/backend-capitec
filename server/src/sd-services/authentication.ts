@@ -1068,15 +1068,11 @@ export class authentication {
       bh.input.body['cash_withdrawal_limit'] = 500;
       bh.input.body['card_purchases_limit'] = 500;
       bh.input.body['online_scan-to-pay_phone'] = 500;
-
       bh.input.body['cash_withdrawal_limit_temp'] = 500;
       bh.input.body['card_purchases_limit_temp'] = 500;
       bh.input.body['online_scan_to_pay_phone_temp'] = 500;
-
       bh.input.body['date'] = 'N/A';
       bh.input.body['registered'] = 'true';
-
-      console.log(bh.input.body);
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_uUIUBZC8TrCWMreT(bh, parentSpanInst);
       //appendnew_next_filter
@@ -1634,6 +1630,7 @@ export class authentication {
       };
 
       delete bh.body.collection;
+      bh.body['_id'] = new Date().getTime();
 
       console.log(bh.body);
 
