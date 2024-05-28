@@ -1757,6 +1757,8 @@ export class money {
         subject: '<b> LOAN UNSUCCESSFUL </b>',
         from: 'Capitec',
         body: `Your application for a loan was not approved.
+   ${bh.input.body.rejectionReason}
+
    <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/>  </center>`,
       };
 

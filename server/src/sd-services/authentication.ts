@@ -2301,6 +2301,7 @@ Your account number is ${bh.accountNo}
         subject: '<b> REGISTRATION UNSUCCESSFUL </b>',
         from: 'Capitec',
         body: `Your application to bank with Capitec was not approved.
+    ${bh.input.body.rejectionReason}
    
    <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/>  </center>`,
       };
