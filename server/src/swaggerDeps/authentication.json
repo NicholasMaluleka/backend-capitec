@@ -169,5 +169,18 @@
                 "authentication"
             ]
         }
+    },
+    "/admin-forgot": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
     }
 }

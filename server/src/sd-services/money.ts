@@ -594,6 +594,38 @@ export class money {
         this.generatedMiddlewares
       )
     );
+
+    this.app['get'](
+      `${this.serviceBasePath}/get-airtime`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_orZPm3KlCQYstssR(bh, parentSpanInst);
+          //appendnew_next_sd_TzG1zs8CYVHNZYLz
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_TzG1zs8CYVHNZYLz');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_money_HttpIn
   }
   //   service flows_money
@@ -1595,9 +1627,6 @@ export class money {
         subject: 'LOAN APPLICATION SUCCESSFUL',
         from: 'Capitec',
         body: `Your application for a loan been approved.
-    
-<br>
-<br>
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/></center>`,
       };
 
@@ -1728,8 +1757,6 @@ export class money {
         subject: '<b> LOAN UNSUCCESSFUL </b>',
         from: 'Capitec',
         body: `Your application for a loan was not approved.
-   <br>
-   <br>
    <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/>  </center>`,
       };
 
@@ -2505,6 +2532,148 @@ export class money {
         'sd_1y2gvVn3KdlbRiNn',
         spanInst,
         'sd_1y2gvVn3KdlbRiNn'
+      );
+    }
+  }
+
+  async sd_orZPm3KlCQYstssR(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_orZPm3KlCQYstssR',
+      parentSpanInst
+    );
+    try {
+      bh.search = {
+        collection: 'airtime',
+      };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_TpfeBAmraAokIIiE(bh, parentSpanInst);
+      //appendnew_next_sd_orZPm3KlCQYstssR
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_orZPm3KlCQYstssR',
+        spanInst,
+        'sd_orZPm3KlCQYstssR'
+      );
+    }
+  }
+
+  async sd_TpfeBAmraAokIIiE(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_TpfeBAmraAokIIiE',
+      parentSpanInst
+    );
+    try {
+      const SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXuInstance: SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu.authentication =
+        SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu.authentication.getInstance();
+      let outputVariables =
+        await SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXuInstance.toCheckIfTheUserExists(
+          spanInst,
+          bh.search
+        );
+      bh.result = outputVariables.local.result;
+
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_JnkwC6IJ6HZAVtsJ(bh, parentSpanInst);
+      //appendnew_next_sd_TpfeBAmraAokIIiE
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_TpfeBAmraAokIIiE',
+        spanInst,
+        'sd_TpfeBAmraAokIIiE'
+      );
+    }
+  }
+
+  async sd_JnkwC6IJ6HZAVtsJ(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_JnkwC6IJ6HZAVtsJ',
+      parentSpanInst
+    );
+    try {
+      if (
+        this.sdService.operators['nempty'](
+          bh.result,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_ZT4ewNodSB225r1F(bh, parentSpanInst);
+      } else {
+        bh = await this.sd_vHbTXvjcu9SYgHVc(bh, parentSpanInst);
+      }
+      this.tracerService.sendData(spanInst, bh);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_JnkwC6IJ6HZAVtsJ',
+        spanInst,
+        'sd_JnkwC6IJ6HZAVtsJ'
+      );
+    }
+  }
+
+  async sd_ZT4ewNodSB225r1F(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_ZT4ewNodSB225r1F',
+      parentSpanInst
+    );
+    try {
+      bh.status = 200;
+      bh.result = bh.result;
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_nutfCUsCy7U81HUF(bh, parentSpanInst);
+      //appendnew_next_sd_ZT4ewNodSB225r1F
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_ZT4ewNodSB225r1F',
+        spanInst,
+        'sd_ZT4ewNodSB225r1F'
+      );
+    }
+  }
+
+  async sd_nutfCUsCy7U81HUF(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(bh.status).send(bh.result);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_nutfCUsCy7U81HUF');
+    }
+  }
+
+  async sd_vHbTXvjcu9SYgHVc(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_vHbTXvjcu9SYgHVc',
+      parentSpanInst
+    );
+    try {
+      bh.status = 404;
+
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_nutfCUsCy7U81HUF(bh, parentSpanInst);
+      //appendnew_next_sd_vHbTXvjcu9SYgHVc
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_vHbTXvjcu9SYgHVc',
+        spanInst,
+        'sd_vHbTXvjcu9SYgHVc'
       );
     }
   }
