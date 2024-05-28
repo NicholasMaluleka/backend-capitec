@@ -1096,7 +1096,8 @@ export class authentication {
 
       bh.input.body['_id'] = new Date().getTime();
       bh.input.body['status'] = 'pending';
-      bh.input.body['available balance'] = 50;
+      bh.input.body['available_balance'] = 50;
+      bh.input.body['savings_balance'] = 0;
       bh.input.body['cash_withdrawal_limit'] = 500;
       bh.input.body['card_purchases_limit'] = 500;
       bh.input.body['online_scan-to-pay_phone'] = 500;
@@ -1184,7 +1185,7 @@ export class authentication {
     try {
       bh.status = 404;
       bh.result = {
-        message: 'User already exist',
+        message: 'USER ALREADY EXISTS!',
       };
       this.tracerService.sendData(spanInst, bh);
       await this.sd_OCnBbcvqOLZSMTj9(bh, parentSpanInst);
@@ -3109,7 +3110,6 @@ Your account number is ${bh.accountNo}
       bh.filter = { email: bh.input.body['email'] };
 
       delete bh.input.body.collection;
-      // delete bh.input.body['_id'];
 
       bh.body = { $set: bh.input.body };
       this.tracerService.sendData(spanInst, bh);
