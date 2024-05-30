@@ -53,7 +53,7 @@
             ]
         }
     },
-    "/get-doc": {
+    "/get-ID": {
         "get": {
             "summary": "",
             "description": "",
@@ -172,6 +172,32 @@
     },
     "/admin-forgot": {
         "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/get-picture": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
+    "/get-proof": {
+        "get": {
             "summary": "",
             "description": "",
             "consumes": [],

@@ -2570,7 +2570,6 @@
         "subject": "bh.payload.subject",
         "body": "undefined",
         "html": "bh.payload.body",
-        "attachment": [],
         "attachmentList": {},
         "switchStates": {
             "attachment": "Map"
