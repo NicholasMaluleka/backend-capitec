@@ -886,7 +886,7 @@ export class authentication {
     try {
       const bcrypt = require('bcrypt');
       bh.result = bh.result[0];
-      bh.match = await bcrypt.compare(bh.input.body.pin, bh.result.password);
+      bh.match = await bcrypt.compare(bh.input.body.pin, bh.result.pin);
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_87NnnBLSMgmN7bvY(bh, parentSpanInst);
       //appendnew_next_sd_yxjKVxJREDrZqi8r
