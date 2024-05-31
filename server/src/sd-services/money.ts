@@ -1630,11 +1630,14 @@ export class money {
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png" width="300px" height="80px"/></center>`,
       };
 
-      // console.log(bh.payload)
-
       bh.status = 200;
 
-      console.log('check mfanaka ==>', bh.input.body);
+      let newCurrentAmount =
+        Number(bh.input.body.available_balance) +
+        Number(bh.input.body.loanAmount);
+
+      bh.input.body.available_balance = newCurrentAmount;
+
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_tsGsEpFuB7luFpWW(bh, parentSpanInst);
       //appendnew_next_sd_zJZqk3BeqIWehZcJ
