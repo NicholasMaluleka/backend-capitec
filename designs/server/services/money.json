@@ -2477,8 +2477,8 @@
         "script": "bh.payload = {\n    to: bh.input.body.email,\n    subject: 'LOAN APPLICATION SUCCESSFUL',\n    from: 'Capitec',\n    body: `Your application for a loan been approved.\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Capitec_Bank_logo.svg/768px-Capitec_Bank_logo.svg.png\" width=\"300px\" height=\"80px\"/></center>`\n}\n\n\n\nbh.status = 200;\n\nlet newCurrentAmount = Number(bh.input.body.available_balance) + Number(bh.input.body.loanAmount);\n\n\nbh.input.body.available_balance = newCurrentAmount;\n\n",
         "functionName": "sd_zJZqk3BeqIWehZcJ",
         "category": "Function",
-        "x": 385,
-        "y": 1400,
+        "x": 365,
+        "y": 1360,
         "wires": [
             [
                 "sd_tsGsEpFuB7luFpWW"
