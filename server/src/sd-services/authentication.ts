@@ -412,7 +412,7 @@ export class authentication {
     );
 
     this.app['put'](
-      `${this.serviceBasePath}/update`,
+      `${this.serviceBasePath}/update-admin-details`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
@@ -884,7 +884,9 @@ export class authentication {
       parentSpanInst
     );
     try {
+      const bcrypt = require('bcrypt');
       bh.result = bh.result[0];
+      bh.match = await bcrypt.compare(bh.input.body.pin, bh.result.password);
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_87NnnBLSMgmN7bvY(bh, parentSpanInst);
       //appendnew_next_sd_yxjKVxJREDrZqi8r
@@ -907,9 +909,9 @@ export class authentication {
     );
     try {
       if (
-        this.sdService.operators['eq'](
-          bh.result.pin,
-          bh.input.body.pin,
+        this.sdService.operators['true'](
+          bh.match,
+          undefined,
           undefined,
           undefined
         )
@@ -1279,12 +1281,15 @@ export class authentication {
       parentSpanInst
     );
     try {
+      const bcrypt = require('bcrypt');
       console.log('Last script: ', bh.hashed);
       bh.status = 200;
       bh.collection = bh.input.body.collection;
 
       delete bh.input.body.collection;
       bh.body = bh.input.body;
+      const hashedPassword = await bcrypt.hash(bh.input.body['pin'], 10);
+      bh.input.body['pin'] = hashedPassword;
       console.log(bh.body);
       console.log(bh.input.body);
 

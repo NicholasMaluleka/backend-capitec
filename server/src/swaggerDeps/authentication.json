@@ -131,6 +131,19 @@
             ]
         }
     },
+    "/update-admin-details": {
+        "put": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "authentication"
+            ]
+        }
+    },
     "/upload-ID": {
         "post": {
             "summary": "",

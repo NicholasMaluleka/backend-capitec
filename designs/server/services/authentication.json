@@ -394,7 +394,6 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
-        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -774,7 +773,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.result = bh.result[0];",
+        "script": "const bcrypt = require('bcrypt')\nbh.result = bh.result[0];\nbh.match = await bcrypt.compare(bh.input.body.pin, bh.result.password)",
         "functionName": "sd_yxjKVxJREDrZqi8r",
         "category": "Function",
         "x": 565,
@@ -796,15 +795,12 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "property": "result.pin",
+        "property": "match",
         "propertyType": "bh",
-        "propertyGv": "bh.result.pin",
+        "propertyGv": "bh.match",
         "rules": [
             {
-                "t": "eq",
-                "v": "body.pin",
-                "vt": "bh.input",
-                "gv": "bh.input.body.pin"
+                "t": "true"
             },
             {
                 "t": "else"
@@ -1900,7 +1896,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log('Last script: ',  bh.hashed)\nbh.status = 200;\nbh.collection = bh.input.body.collection;\n\ndelete bh.input.body.collection;\nbh.body = bh.input.body;\nconsole.log(bh.body)\nconsole.log(bh.input.body)\n\n\n\nconsole.log('body ==>', bh.result);",
+        "script": "const bcrypt = require('bcrypt')\nconsole.log('Last script: ',  bh.hashed)\nbh.status = 200;\nbh.collection = bh.input.body.collection;\n\ndelete bh.input.body.collection;\nbh.body = bh.input.body;\nconst hashedPassword = await bcrypt.hash(bh.input.body['pin'],10);\nbh.input.body['pin'] = hashedPassword\nconsole.log(bh.body)\nconsole.log(bh.input.body)\n\n\n\nconsole.log('body ==>', bh.result);",
         "functionName": "sd_1PgsBoBZHTxIgHrz",
         "category": "Function",
         "x": 465,
@@ -3866,7 +3862,7 @@
         "viewType": "server",
         "nodeType": "start",
         "name": "update-admin-details",
-        "path": "/update",
+        "path": "/update-admin-details",
         "uploadpath": "",
         "summary": "",
         "description": "",
