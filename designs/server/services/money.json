@@ -2184,7 +2184,7 @@
         "script": "bh.collection = 'loans';\nbh.filter = { 'email': bh.input.body['email']};\n\ndelete bh.input.body.collection;\n\nbh.body = {$set: bh.input.body};\nconsole.log(bh.filter)\n",
         "functionName": "sd_0I0V6wpec5QQqAOF",
         "category": "Function",
-        "x": 225,
+        "x": 185,
         "y": 1460,
         "wires": [
             [
@@ -2518,7 +2518,7 @@
         "outputs": 2,
         "functionName": "s",
         "category": "Function",
-        "x": 305,
+        "x": 285,
         "y": 1460,
         "wires": [
             [
