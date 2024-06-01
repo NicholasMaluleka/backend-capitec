@@ -607,6 +607,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -772,7 +773,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "const bcrypt = require('bcrypt')\nbh.result = bh.result[0];\nbh.match = await bcrypt.compare(bh.input.body.pin, bh.result.pin)",
+        "script": "const bcrypt = require('bcrypt')\nbh.result = bh.result[0];\nbh.match = await bcrypt.compare(bh.input.body.remotePin, bh.result.remotePin)",
         "functionName": "sd_yxjKVxJREDrZqi8r",
         "category": "Function",
         "x": 565,
@@ -1873,7 +1874,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "filter",
-        "script": "    bh.search = {\n    query: { 'email': bh.input.body.email },\n    collection: 'users',\n}\n\nbh.input.body['_id'] = new Date().getTime();\nbh.input.body['status'] = \"pending\";\nbh.input.body['available_balance'] = 50\nbh.input.body['savings_balance'] = 0\nbh.input.body['cash_withdrawal_limit'] = 500\nbh.input.body['card_purchases_limit'] = 500\nbh.input.body['online_scan-to-pay_phone'] = 500\nbh.input.body['cash_withdrawal_limit_temp'] = 500\nbh.input.body['card_purchases_limit_temp'] = 500\nbh.input.body['online_scan_to_pay_phone_temp'] = 500\nbh.input.body['date'] = \"N/A\"\nbh.input.body['registered'] = \"true\"",
+        "script": "    bh.search = {\n    query: { 'email': bh.input.body.email },\n    collection: 'users',\n}\n\nbh.input.body['_id'] = new Date().getTime();\nbh.input.body['status'] = \"pending\";\nbh.input.body['available_balance'] = 50\nbh.input.body['savings_balance'] = 0\nbh.input.body['cash_withdrawal_limit'] = 500\nbh.input.body['card_purchases_limit'] = 500\nbh.input.body['online_scan_to_pay_phone'] = 500\nbh.input.body['cash_withdrawal_limit_temp'] = 500\nbh.input.body['card_purchases_limit_temp'] = 500\nbh.input.body['online_scan_to_pay_phone_temp'] = 500\nbh.input.body['date'] = \"N/A\"\nbh.input.body['registered'] = \"true\"",
         "functionName": "filter",
         "category": "Function",
         "x": 145,
@@ -3873,6 +3874,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -4271,6 +4273,7 @@
             "send": "bh.result"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -4316,6 +4319,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -4617,6 +4621,7 @@
             "stream": "bh.file.downloadStream"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -4893,6 +4898,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -5471,6 +5477,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -5793,6 +5800,197 @@
         "category": "HTTP",
         "x": 1250,
         "y": 2500,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_rygB3MKlIUFd02XL",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/find-one-user",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 85,
+        "y": 3280,
+        "wires": [
+            [
+                "sd_nEj1eKwM8CtiPwrf"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "authentication",
+        "functionName": "sd_rygB3MKlIUFd02XL"
+    },
+    {
+        "id": "sd_nEj1eKwM8CtiPwrf",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.search = {\n    // query: { 'email': bh.input.body.email },\n    collection: 'users'\n}",
+        "functionName": "sd_nEj1eKwM8CtiPwrf",
+        "category": "Function",
+        "x": 185,
+        "y": 3280,
+        "wires": [
+            [
+                "sd_OCzsvxlgAZmCDS8v"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_OCzsvxlgAZmCDS8v",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+            "type": "tab",
+            "createdDate": "2024-05-13T18:38:46.597Z",
+            "label": "authentication",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_KjP1tTXY8ubtVYLV",
+            "flowName": "toCheckIfTheUserExists"
+        },
+        "inputVariables": [
+            {
+                "key": "searchObj",
+                "map": true,
+                "valueType": "bh",
+                "value": "search"
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./authentication",
+        "startName": "toCheckIfTheUserExists",
+        "inputParams": [
+            "bh.search"
+        ],
+        "accept_bh": false,
+        "functionName": "sd_OCzsvxlgAZmCDS8v",
+        "category": "General",
+        "x": 280,
+        "y": 3280,
+        "wires": [
+            [
+                "sd_vtXdogcbNBnfuFIQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "authentication",
+        "generated": true
+    },
+    {
+        "id": "sd_vtXdogcbNBnfuFIQ",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_vtXdogcbNBnfuFIQ",
+        "category": "HTTP",
+        "x": 405,
+        "y": 3280,
         "wires": [],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
