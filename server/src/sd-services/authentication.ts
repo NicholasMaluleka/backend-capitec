@@ -1754,7 +1754,7 @@ export class authentication {
       bh.result = await fileInServiceInstance.fileIn({
         filepath: bh.file.path,
         format: 'buffer',
-        encoding: 'utf8',
+        encoding: 'none',
       });
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_2vm1so87YiwjrXIi(bh, parentSpanInst);

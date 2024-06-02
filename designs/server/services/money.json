@@ -30,6 +30,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -64,7 +65,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_60BNLbiIpUVayAY8"
+        "functionName": "sd_60BNLbiIpUVayAY8",
+        "generated": false
     },
     {
         "id": "sd_6mdfSM2ofre2xeVL",
@@ -259,6 +261,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -293,7 +296,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_km6pcIJHHjl4EtKi"
+        "functionName": "sd_km6pcIJHHjl4EtKi",
+        "generated": false
     },
     {
         "id": "sd_US6fzZ3MTlO35CxO",
@@ -523,7 +527,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_xIBhpWD43UbWeZRC"
+        "functionName": "sd_xIBhpWD43UbWeZRC",
+        "generated": false
     },
     {
         "id": "sd_PcL1SOCo3VWgYpJM",
@@ -753,7 +758,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_1CzkgzcP8319IxLr"
+        "functionName": "sd_1CzkgzcP8319IxLr",
+        "generated": false
     },
     {
         "id": "sd_a3GLXtWfgmhnkp6C",
@@ -983,7 +989,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_3OviGai5r5P8bsS9"
+        "functionName": "sd_3OviGai5r5P8bsS9",
+        "generated": false
     },
     {
         "id": "sd_YipzuufjTxx4VnN2",
@@ -1065,9 +1072,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "money",
-        "generated": true
+        "serviceName": "money"
     },
     {
         "id": "sd_eAczU2y4dCAH1VRy",
@@ -1244,7 +1251,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "money"
+        "serviceName": "money",
+        "generated": false
     },
     {
         "id": "sd_Uu80lqbuy1yUpJx2",
@@ -1335,6 +1343,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -1369,7 +1378,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_1jZLDEYQFXU9lMyU"
+        "functionName": "sd_1jZLDEYQFXU9lMyU",
+        "generated": false
     },
     {
         "id": "sd_CiIL3tc2dQmojqMa",
@@ -1451,9 +1461,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "money",
-        "generated": true
+        "serviceName": "money"
     },
     {
         "id": "sd_PJfVuB3NawONkGpe",
@@ -1609,7 +1619,6 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
-        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -1644,7 +1653,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_DEGzgdDizNJP1sry"
+        "functionName": "sd_DEGzgdDizNJP1sry",
+        "generated": false
     },
     {
         "id": "sd_vEhXYAGcb5qIAlt0",
@@ -1726,9 +1736,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "money",
-        "generated": true
+        "serviceName": "money"
     },
     {
         "id": "sd_7ShMFUgkM4DAroxb",
@@ -1816,7 +1826,6 @@
             "send": "bh.result"
         },
         "dataModelIsArray": false,
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -1942,7 +1951,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_0GLKUm8ZfkhouX9A"
+        "functionName": "sd_0GLKUm8ZfkhouX9A",
+        "generated": false
     },
     {
         "id": "sd_zaF6MFIxG1hVBl7n",
@@ -2172,7 +2182,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_NIRNgGgnpquOO6nM"
+        "functionName": "sd_NIRNgGgnpquOO6nM",
+        "generated": false
     },
     {
         "id": "sd_0I0V6wpec5QQqAOF",
@@ -2827,7 +2838,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_zhLzgy3rkdvq3Ugo"
+        "functionName": "sd_zhLzgy3rkdvq3Ugo",
+        "generated": false
     },
     {
         "id": "sd_Pc9ES0NNI9DYOQZL",
@@ -2909,9 +2921,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "money",
-        "generated": true
+        "serviceName": "money"
     },
     {
         "id": "sd_FpVgakpDf5bqZqPJ",
@@ -3125,7 +3137,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_pgHCjAvi3BYkVBCW"
+        "functionName": "sd_pgHCjAvi3BYkVBCW",
+        "generated": false
     },
     {
         "id": "sd_zjrMOpGBu6CVDJMU",
@@ -3378,7 +3391,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_M2CoA82pKhYgdUAh"
+        "functionName": "sd_M2CoA82pKhYgdUAh",
+        "generated": false
     },
     {
         "id": "sd_1K8U3sRyh8cDJYwM",
@@ -3631,7 +3645,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_GBTeHr8fgzDZQ5Ym"
+        "functionName": "sd_GBTeHr8fgzDZQ5Ym",
+        "generated": false
     },
     {
         "id": "sd_YxtS3NP9gMdSWyhn",
@@ -3861,7 +3876,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_b1wO3uBRfmodvakP"
+        "functionName": "sd_b1wO3uBRfmodvakP",
+        "generated": false
     },
     {
         "id": "sd_25PAiAXqFm62q14J",
@@ -3943,9 +3959,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "money",
-        "generated": true
+        "serviceName": "money"
     },
     {
         "id": "sd_1h7zG2Fgh77yAA2I",
@@ -4136,7 +4152,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_zWZ29yaI5P45Vm9a"
+        "functionName": "sd_zWZ29yaI5P45Vm9a",
+        "generated": false
     },
     {
         "id": "sd_xiEHCrANfLHAt0J9",
@@ -4218,9 +4235,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "money",
-        "generated": true
+        "serviceName": "money"
     },
     {
         "id": "sd_UW8ywBMerKCdkePp",
@@ -4376,6 +4393,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -4410,7 +4428,8 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "money",
-        "functionName": "sd_TzG1zs8CYVHNZYLz"
+        "functionName": "sd_TzG1zs8CYVHNZYLz",
+        "generated": false
     },
     {
         "id": "sd_orZPm3KlCQYstssR",
@@ -4492,9 +4511,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "money",
-        "generated": true
+        "serviceName": "money"
     },
     {
         "id": "sd_JnkwC6IJ6HZAVtsJ",
