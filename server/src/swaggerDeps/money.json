@@ -214,5 +214,31 @@
                 "money"
             ]
         }
+    },
+    "/scan": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "money"
+            ]
+        }
+    },
+    "/transfer-money": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "money"
+            ]
+        }
     }
 }

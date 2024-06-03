@@ -762,7 +762,6 @@ export class authentication {
       bh.filter = { email: bh.input.body['email'] };
 
       delete bh.input.body.collection;
-      // delete bh.input.body['_id'];
 
       bh.body = { $set: bh.input.body };
       this.tracerService.sendData(spanInst, bh);
@@ -1202,6 +1201,7 @@ export class authentication {
       bh.input.body['cash_withdrawal_limit_temp'] = 500;
       bh.input.body['card_purchases_limit_temp'] = 500;
       bh.input.body['online_scan_to_pay_phone_temp'] = 500;
+      bh.input.body['limit_counter'] = 0;
       bh.input.body['date'] = 'N/A';
       bh.input.body['registered'] = 'true';
       this.tracerService.sendData(spanInst, bh);
@@ -1323,8 +1323,8 @@ export class authentication {
 
       delete bh.input.body.collection;
       bh.body = bh.input.body;
-      const hashedPassword = await bcrypt.hash(bh.input.body['pin'], 10);
-      bh.input.body['pin'] = hashedPassword;
+      const hashedPassword = await bcrypt.hash(bh.input.body['remotePin'], 10);
+      bh.input.body['remotePin'] = hashedPassword;
       console.log(bh.body);
       console.log(bh.input.body);
 
