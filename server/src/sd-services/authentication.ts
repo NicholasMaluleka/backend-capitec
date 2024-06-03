@@ -649,6 +649,38 @@ export class authentication {
         this.generatedMiddlewares
       )
     );
+
+    this.app['get'](
+      `${this.serviceBasePath}/find-one-user`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_nEj1eKwM8CtiPwrf(bh, parentSpanInst);
+          //appendnew_next_sd_rygB3MKlIUFd02XL
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_rygB3MKlIUFd02XL');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_authentication_HttpIn
   }
   //   service flows_authentication
@@ -730,7 +762,6 @@ export class authentication {
       bh.filter = { email: bh.input.body['email'] };
 
       delete bh.input.body.collection;
-      // delete bh.input.body['_id'];
 
       bh.body = { $set: bh.input.body };
       this.tracerService.sendData(spanInst, bh);
@@ -886,7 +917,10 @@ export class authentication {
     try {
       const bcrypt = require('bcrypt');
       bh.result = bh.result[0];
-      bh.match = await bcrypt.compare(bh.input.body.pin, bh.result.pin);
+      bh.match = await bcrypt.compare(
+        bh.input.body.remotePin,
+        bh.result.remotePin
+      );
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_87NnnBLSMgmN7bvY(bh, parentSpanInst);
       //appendnew_next_sd_yxjKVxJREDrZqi8r
@@ -1132,7 +1166,11 @@ export class authentication {
   async notFound(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan('notFound', parentSpanInst);
     try {
-      bh.status = 404;
+      if (bh.result) {
+        bh.status = 200;
+      } else {
+        bh.status = 404;
+      }
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_1ZmxULLNfcKygpjb(bh, parentSpanInst);
@@ -1163,10 +1201,11 @@ export class authentication {
       bh.input.body['savings_balance'] = 0;
       bh.input.body['cash_withdrawal_limit'] = 500;
       bh.input.body['card_purchases_limit'] = 500;
-      bh.input.body['online_scan-to-pay_phone'] = 500;
+      bh.input.body['online_scan_to_pay_phone'] = 500;
       bh.input.body['cash_withdrawal_limit_temp'] = 500;
       bh.input.body['card_purchases_limit_temp'] = 500;
       bh.input.body['online_scan_to_pay_phone_temp'] = 500;
+      bh.input.body['limit_counter'] = 0;
       bh.input.body['date'] = 'N/A';
       bh.input.body['registered'] = 'true';
       this.tracerService.sendData(spanInst, bh);
@@ -1288,8 +1327,8 @@ export class authentication {
 
       delete bh.input.body.collection;
       bh.body = bh.input.body;
-      const hashedPassword = await bcrypt.hash(bh.input.body['pin'], 10);
-      bh.input.body['pin'] = hashedPassword;
+      const hashedPassword = await bcrypt.hash(bh.input.body['remotePin'], 10);
+      bh.input.body['remotePin'] = hashedPassword;
       console.log(bh.body);
       console.log(bh.input.body);
 
@@ -2394,7 +2433,11 @@ Your account number is ${bh.accountNo}
       parentSpanInst
     );
     try {
-      bh.status = 404;
+      if (bh.result) {
+        bh.status = 200;
+      } else {
+        bh.status = 404;
+      }
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_MrHH4LDqzVd2kl1V(bh, parentSpanInst);
@@ -3413,6 +3456,68 @@ Your account number is ${bh.accountNo}
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_tK05ogYSl1YjfcDG');
+    }
+  }
+
+  async sd_nEj1eKwM8CtiPwrf(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_nEj1eKwM8CtiPwrf',
+      parentSpanInst
+    );
+    try {
+      bh.search = {
+        // query: { 'email': bh.input.body.email },
+        collection: 'users',
+      };
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_OCzsvxlgAZmCDS8v(bh, parentSpanInst);
+      //appendnew_next_sd_nEj1eKwM8CtiPwrf
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_nEj1eKwM8CtiPwrf',
+        spanInst,
+        'sd_nEj1eKwM8CtiPwrf'
+      );
+    }
+  }
+
+  async sd_OCzsvxlgAZmCDS8v(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_OCzsvxlgAZmCDS8v',
+      parentSpanInst
+    );
+    try {
+      let outputVariables = await this.toCheckIfTheUserExists(
+        spanInst,
+        bh.search
+      );
+      bh.result = outputVariables.local.result;
+
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_vtXdogcbNBnfuFIQ(bh, parentSpanInst);
+      //appendnew_next_sd_OCzsvxlgAZmCDS8v
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_OCzsvxlgAZmCDS8v',
+        spanInst,
+        'sd_OCzsvxlgAZmCDS8v'
+      );
+    }
+  }
+
+  async sd_vtXdogcbNBnfuFIQ(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(200).send(bh.result);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_vtXdogcbNBnfuFIQ');
     }
   }
 
