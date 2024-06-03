@@ -1191,7 +1191,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "not found",
-        "script": "bh.status = 404;\n",
+        "script": "if(bh.result){\n    bh.status = 200;\n}else{\n    bh.status = 404;\n}\n",
         "functionName": "notFound",
         "category": "Function",
         "x": 545,
@@ -1337,7 +1337,6 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
-        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -1578,7 +1577,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "bad",
-        "script": "bh.status = 404;\n",
+        "script": "if(bh.result){\n    bh.status = 200;\n}else{\n    bh.status = 404;\n}\n",
         "functionName": "bad",
         "category": "Function",
         "x": 1105,
@@ -1790,7 +1789,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "not foundd",
-        "script": "bh.status = 404;\n",
+        "script": "if(bh.result){\n    bh.status = 200;\n}else{\n    bh.status = 404;\n}\n",
         "functionName": "notFoundd",
         "category": "Function",
         "x": 540,
@@ -2973,7 +2972,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "not foun",
-        "script": "bh.status = 404;\n",
+        "script": "if(bh.result){\n    bh.status = 200;\n}else{\n    bh.status = 404;\n}\n",
         "functionName": "notFoun",
         "category": "Function",
         "x": 1180,
@@ -4007,7 +4006,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.status = 404;\n",
+        "script": "if(bh.result){\n    bh.status = 200;\n}else{\n    bh.status = 404;\n}\n",
         "functionName": "sd_O91RDaBbJOFG4pOQ",
         "category": "Function",
         "x": 580,
@@ -4282,7 +4281,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.status = 404;\n",
+        "script": "if(bh.result){\n    bh.status = 200;\n}else{\n    bh.status = 404;\n}\n",
         "functionName": "sd_1y2gvVn3KdlbRiNn",
         "category": "Function",
         "x": 560,
@@ -4557,7 +4556,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.status = 404;\n",
+        "script": "if(bh.result){\n    bh.status = 200;\n}else{\n    bh.status = 404;\n}\n",
         "functionName": "sd_vHbTXvjcu9SYgHVc",
         "category": "Function",
         "x": 1105,
@@ -5084,6 +5083,280 @@
         "wires": [
             [
                 "sd_7ShMFUgkM4DAroxb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_DiBBJBSgf5DwkXsV",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "get scan to pay",
+        "path": "/get-scanned",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 65,
+        "y": 2880,
+        "wires": [
+            [
+                "sd_6Wz63tlmdKaFxWWL"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "money",
+        "functionName": "sd_DiBBJBSgf5DwkXsV"
+    },
+    {
+        "id": "sd_6Wz63tlmdKaFxWWL",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.search = {\n    collection: 'scan_to_pay'\n}",
+        "functionName": "sd_6Wz63tlmdKaFxWWL",
+        "category": "Function",
+        "x": 185,
+        "y": 2880,
+        "wires": [
+            [
+                "sd_oWtXxh6a3vHGEctJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_jKgnzh66EoLTHght",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "result",
+        "propertyType": "bh",
+        "propertyGv": "bh.result",
+        "rules": [
+            {
+                "t": "nempty"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_jKgnzh66EoLTHght",
+        "category": "Function",
+        "x": 440,
+        "y": 2880,
+        "wires": [
+            [
+                "sd_79A2RBDzeN3U5Syf"
+            ],
+            [
+                "sd_AvgfGvDAFufHh10G"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_79A2RBDzeN3U5Syf",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.status = 200;\nbh.result = bh.result;",
+        "functionName": "sd_79A2RBDzeN3U5Syf",
+        "category": "Function",
+        "x": 560,
+        "y": 2840,
+        "wires": [
+            [
+                "sd_MCdEpbqX9bTToSEv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_MCdEpbqX9bTToSEv",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "bh",
+            "value": "status",
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": "bh.status",
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "entityId": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_MCdEpbqX9bTToSEv",
+        "category": "HTTP",
+        "x": 680,
+        "y": 2900,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_AvgfGvDAFufHh10G",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(bh.result){\n    bh.status = 200;\n}else{\n    bh.status = 404;\n}\n",
+        "functionName": "sd_AvgfGvDAFufHh10G",
+        "category": "Function",
+        "x": 560,
+        "y": 2980,
+        "wires": [
+            [
+                "sd_MCdEpbqX9bTToSEv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "money",
+        "generated": true
+    },
+    {
+        "id": "sd_oWtXxh6a3vHGEctJ",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_gvv5IQCm9dR7gP0I",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_L5Ge8g2BzQJlhEXu",
+            "type": "tab",
+            "createdDate": "2024-05-13T18:38:46.597Z",
+            "label": "authentication",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_KjP1tTXY8ubtVYLV",
+            "flowName": "toCheckIfTheUserExists"
+        },
+        "inputVariables": [
+            {
+                "key": "searchObj",
+                "map": true,
+                "valueType": "bh",
+                "value": "search"
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./authentication",
+        "startName": "toCheckIfTheUserExists",
+        "inputParams": [
+            "bh.search"
+        ],
+        "accept_bh": false,
+        "functionName": "sd_oWtXxh6a3vHGEctJ",
+        "category": "General",
+        "x": 305,
+        "y": 2880,
+        "wires": [
+            [
+                "sd_jKgnzh66EoLTHght"
             ]
         ],
         "__n_excludedFromValidation__": {},

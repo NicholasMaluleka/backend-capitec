@@ -1166,7 +1166,11 @@ export class authentication {
   async notFound(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan('notFound', parentSpanInst);
     try {
-      bh.status = 404;
+      if (bh.result) {
+        bh.status = 200;
+      } else {
+        bh.status = 404;
+      }
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_1ZmxULLNfcKygpjb(bh, parentSpanInst);
@@ -2429,7 +2433,11 @@ Your account number is ${bh.accountNo}
       parentSpanInst
     );
     try {
-      bh.status = 404;
+      if (bh.result) {
+        bh.status = 200;
+      } else {
+        bh.status = 404;
+      }
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_MrHH4LDqzVd2kl1V(bh, parentSpanInst);
